@@ -1,0 +1,6 @@
+Dialogue: 0,0:00:19.87,0:00:30.20,Default,,0,0,0,,Me presento como el presunto Culpable, pues no culpo al resto De mis movimientos que son bruscos Muestro mi talento oculto Si me llevo los tres puntos Y no hablo de
+Dialogue: 0,0:00:30.20,0:00:40.85,Default,,0,0,0,,Hablo de eso y lo que reviento Y los sepulto, les inculco Un poco de mi dialecto Cumplo mis proyectos Tumbo a los ineptos Apunto directo y encuentro lo que busco
+Dialogue: 0,0:00:41.24,0:00:51.25,Default,,0,0,0,,me luzco, no es que me crea el cuento Es que digo lo que siento, no importa si te insulto No es que sea perfecto, no falle ningún punto Tampoco es que sea culto, es que nací para esto
+Dialogue: 0,0:00:51.80,0:01:01.75,Default,,0,0,0,,Esto, más la rienda del asunto Por el pico, los corruptos, esto es lo que yo ofrezco Tuve claro el rumbo y ha llegado mi momento Así que ahora me convierto en el mejor rapper del
+Dialogue: 0,0:01:02.80,0:01:07.01,Default,,0,0,0,,Son inmundos y grotescos Así que los quiebro en fracción de segundos
+Dialogue: 0,0:01:08.28,0:01:12.06,Default,,0,0,0,,Me los garcho a los 15 juntos y cumplo mi sueño en este evento.

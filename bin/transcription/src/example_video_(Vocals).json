@@ -1,0 +1,1479 @@
+{
+    "id": "004ef2bb-1379-4193-942a-d14ccf36e051",
+    "language_model": "assemblyai_default",
+    "acoustic_model": "assemblyai_default",
+    "language_code": "es",
+    "status": "completed",
+    "audio_url": "https://cdn.assemblyai.com/upload/ed086f20-9ebc-483d-a89e-2d96fed485e1",
+    "text": "Quiero que le den un fuerte ruido, de verdad, damas y caballeros, para \u00e9l, \u00e9l, \u00e9l, \u00e9l, Ben\u00e9\u00e9\u00e9\u00e9\u00e9l. \u00a1Ben\u00e9\u00e9\u00e9\u00e9\u00e9l! Hermano, qu\u00e9 presentaci\u00f3n. Ay, c\u00f3mo me presento, guau, guau. \u00a1Tres, dos, uno, tiempo! Me presento como el presunto Culpable, pues no culpo al resto De mis movimientos que son bruscos Muestro mi talento oculto Si me llevo los tres puntos Y no hablo de baloncesto Hablo de eso y lo que reviento Y los sepulto, les inculco Un poco de mi dialecto Cumplo mis proyectos Tumbo a los ineptos Apunto directo y encuentro lo que busco Si me luzco, no es que me crea el cuento Es que digo lo que siento, no importa si te insulto No es que sea perfecto, no falle ning\u00fan punto Tampoco es que sea culto, es que nac\u00ed para esto Esto, m\u00e1s la rienda del asunto Por el pico, los corruptos, esto es lo que yo ofrezco Tuve claro el rumbo y ha llegado mi momento As\u00ed que ahora me convierto en el mejor rapper del mundo Son inmundos y grotescos As\u00ed que los quiebro en fracci\u00f3n de segundos Me los garcho a los 15 juntos y cumplo mi sue\u00f1o en este evento. \u00a1Tiempo! \u00a1Fuerte ese ruido!",
+    "words": [
+        {
+            "text": "Quiero",
+            "start": 780,
+            "end": 960,
+            "confidence": 0.905,
+            "speaker": null
+        },
+        {
+            "text": "que",
+            "start": 1020,
+            "end": 1100,
+            "confidence": 0.38,
+            "speaker": null
+        },
+        {
+            "text": "le",
+            "start": 1120,
+            "end": 1200,
+            "confidence": 0.564,
+            "speaker": null
+        },
+        {
+            "text": "den",
+            "start": 1240,
+            "end": 1461,
+            "confidence": 0.733,
+            "speaker": null
+        },
+        {
+            "text": "un",
+            "start": 2101,
+            "end": 2221,
+            "confidence": 0.85,
+            "speaker": null
+        },
+        {
+            "text": "fuerte",
+            "start": 2301,
+            "end": 2762,
+            "confidence": 0.686,
+            "speaker": null
+        },
+        {
+            "text": "ruido,",
+            "start": 3122,
+            "end": 3482,
+            "confidence": 0.84,
+            "speaker": null
+        },
+        {
+            "text": "de",
+            "start": 3742,
+            "end": 3842,
+            "confidence": 0.939,
+            "speaker": null
+        },
+        {
+            "text": "verdad,",
+            "start": 3902,
+            "end": 4283,
+            "confidence": 0.877,
+            "speaker": null
+        },
+        {
+            "text": "damas",
+            "start": 4583,
+            "end": 4943,
+            "confidence": 0.774,
+            "speaker": null
+        },
+        {
+            "text": "y",
+            "start": 5023,
+            "end": 5063,
+            "confidence": 0.807,
+            "speaker": null
+        },
+        {
+            "text": "caballeros,",
+            "start": 5143,
+            "end": 5784,
+            "confidence": 0.871,
+            "speaker": null
+        },
+        {
+            "text": "para",
+            "start": 6104,
+            "end": 6364,
+            "confidence": 0.948,
+            "speaker": null
+        },
+        {
+            "text": "\u00e9l,",
+            "start": 6784,
+            "end": 6905,
+            "confidence": 0.614,
+            "speaker": null
+        },
+        {
+            "text": "\u00e9l,",
+            "start": 7225,
+            "end": 7345,
+            "confidence": 0.635,
+            "speaker": null
+        },
+        {
+            "text": "\u00e9l,",
+            "start": 7465,
+            "end": 7605,
+            "confidence": 0.628,
+            "speaker": null
+        },
+        {
+            "text": "\u00e9l,",
+            "start": 7645,
+            "end": 7765,
+            "confidence": 0.606,
+            "speaker": null
+        },
+        {
+            "text": "Ben\u00e9\u00e9\u00e9\u00e9\u00e9l.",
+            "start": 7805,
+            "end": 8164,
+            "confidence": 0.287,
+            "speaker": null
+        },
+        {
+            "text": "\u00a1Ben\u00e9\u00e9\u00e9\u00e9\u00e9l!",
+            "start": 8446,
+            "end": 8706,
+            "confidence": 0.178,
+            "speaker": null
+        },
+        {
+            "text": "Hermano,",
+            "start": 8746,
+            "end": 12329,
+            "confidence": 0.618,
+            "speaker": null
+        },
+        {
+            "text": "qu\u00e9",
+            "start": 12369,
+            "end": 12509,
+            "confidence": 0.523,
+            "speaker": null
+        },
+        {
+            "text": "presentaci\u00f3n.",
+            "start": 12549,
+            "end": 13469,
+            "confidence": 0.828,
+            "speaker": null
+        },
+        {
+            "text": "Ay,",
+            "start": 14390,
+            "end": 14430,
+            "confidence": 0.204,
+            "speaker": null
+        },
+        {
+            "text": "c\u00f3mo",
+            "start": 14650,
+            "end": 14910,
+            "confidence": 0.62,
+            "speaker": null
+        },
+        {
+            "text": "me",
+            "start": 14950,
+            "end": 15091,
+            "confidence": 0.386,
+            "speaker": null
+        },
+        {
+            "text": "presento,",
+            "start": 15111,
+            "end": 15611,
+            "confidence": 0.639,
+            "speaker": null
+        },
+        {
+            "text": "guau,",
+            "start": 15631,
+            "end": 16210,
+            "confidence": 0.644,
+            "speaker": null
+        },
+        {
+            "text": "guau.",
+            "start": 16672,
+            "end": 16872,
+            "confidence": 0.213,
+            "speaker": null
+        },
+        {
+            "text": "\u00a1Tres,",
+            "start": 17480,
+            "end": 19181,
+            "confidence": 0.748,
+            "speaker": null
+        },
+        {
+            "text": "dos,",
+            "start": 19421,
+            "end": 19561,
+            "confidence": 0.366,
+            "speaker": null
+        },
+        {
+            "text": "uno,",
+            "start": 19621,
+            "end": 19681,
+            "confidence": 0.018,
+            "speaker": null
+        },
+        {
+            "text": "tiempo!",
+            "start": 19701,
+            "end": 19901,
+            "confidence": 0.296,
+            "speaker": null
+        },
+        {
+            "text": "Me",
+            "start": 19921,
+            "end": 20041,
+            "confidence": 0.643,
+            "speaker": null
+        },
+        {
+            "text": "presento",
+            "start": 20081,
+            "end": 20662,
+            "confidence": 0.882,
+            "speaker": null
+        },
+        {
+            "text": "como",
+            "start": 20762,
+            "end": 20902,
+            "confidence": 0.89,
+            "speaker": null
+        },
+        {
+            "text": "el",
+            "start": 20942,
+            "end": 21022,
+            "confidence": 0.842,
+            "speaker": null
+        },
+        {
+            "text": "presunto",
+            "start": 21082,
+            "end": 21662,
+            "confidence": 0.785,
+            "speaker": null
+        },
+        {
+            "text": "Culpable,",
+            "start": 21742,
+            "end": 22122,
+            "confidence": 0.853,
+            "speaker": null
+        },
+        {
+            "text": "pues",
+            "start": 22162,
+            "end": 22302,
+            "confidence": 0.745,
+            "speaker": null
+        },
+        {
+            "text": "no",
+            "start": 22322,
+            "end": 22423,
+            "confidence": 0.617,
+            "speaker": null
+        },
+        {
+            "text": "culpo",
+            "start": 22483,
+            "end": 22703,
+            "confidence": 0.909,
+            "speaker": null
+        },
+        {
+            "text": "al",
+            "start": 22743,
+            "end": 22803,
+            "confidence": 0.83,
+            "speaker": null
+        },
+        {
+            "text": "resto",
+            "start": 22903,
+            "end": 23183,
+            "confidence": 0.897,
+            "speaker": null
+        },
+        {
+            "text": "De",
+            "start": 23203,
+            "end": 23243,
+            "confidence": 0.0,
+            "speaker": null
+        },
+        {
+            "text": "mis",
+            "start": 23603,
+            "end": 23703,
+            "confidence": 0.754,
+            "speaker": null
+        },
+        {
+            "text": "movimientos",
+            "start": 23783,
+            "end": 24283,
+            "confidence": 0.832,
+            "speaker": null
+        },
+        {
+            "text": "que",
+            "start": 24344,
+            "end": 24444,
+            "confidence": 0.668,
+            "speaker": null
+        },
+        {
+            "text": "son",
+            "start": 24524,
+            "end": 24664,
+            "confidence": 0.981,
+            "speaker": null
+        },
+        {
+            "text": "bruscos",
+            "start": 24724,
+            "end": 25164,
+            "confidence": 0.731,
+            "speaker": null
+        },
+        {
+            "text": "Muestro",
+            "start": 25424,
+            "end": 25844,
+            "confidence": 0.803,
+            "speaker": null
+        },
+        {
+            "text": "mi",
+            "start": 26044,
+            "end": 26144,
+            "confidence": 0.93,
+            "speaker": null
+        },
+        {
+            "text": "talento",
+            "start": 26184,
+            "end": 26565,
+            "confidence": 0.975,
+            "speaker": null
+        },
+        {
+            "text": "oculto",
+            "start": 26585,
+            "end": 27085,
+            "confidence": 0.855,
+            "speaker": null
+        },
+        {
+            "text": "Si",
+            "start": 27305,
+            "end": 27445,
+            "confidence": 0.822,
+            "speaker": null
+        },
+        {
+            "text": "me",
+            "start": 27485,
+            "end": 27565,
+            "confidence": 0.862,
+            "speaker": null
+        },
+        {
+            "text": "llevo",
+            "start": 27605,
+            "end": 27905,
+            "confidence": 0.857,
+            "speaker": null
+        },
+        {
+            "text": "los",
+            "start": 27965,
+            "end": 28045,
+            "confidence": 0.822,
+            "speaker": null
+        },
+        {
+            "text": "tres",
+            "start": 28085,
+            "end": 28245,
+            "confidence": 0.956,
+            "speaker": null
+        },
+        {
+            "text": "puntos",
+            "start": 28326,
+            "end": 28706,
+            "confidence": 0.873,
+            "speaker": null
+        },
+        {
+            "text": "Y",
+            "start": 28726,
+            "end": 28746,
+            "confidence": 0.001,
+            "speaker": null
+        },
+        {
+            "text": "no",
+            "start": 29066,
+            "end": 29146,
+            "confidence": 0.851,
+            "speaker": null
+        },
+        {
+            "text": "hablo",
+            "start": 29186,
+            "end": 29386,
+            "confidence": 0.89,
+            "speaker": null
+        },
+        {
+            "text": "de",
+            "start": 29426,
+            "end": 29526,
+            "confidence": 0.811,
+            "speaker": null
+        },
+        {
+            "text": "baloncesto",
+            "start": 29586,
+            "end": 30287,
+            "confidence": 0.874,
+            "speaker": null
+        },
+        {
+            "text": "Hablo",
+            "start": 30307,
+            "end": 30527,
+            "confidence": 0.691,
+            "speaker": null
+        },
+        {
+            "text": "de",
+            "start": 30607,
+            "end": 30727,
+            "confidence": 0.801,
+            "speaker": null
+        },
+        {
+            "text": "eso",
+            "start": 30767,
+            "end": 30967,
+            "confidence": 0.517,
+            "speaker": null
+        },
+        {
+            "text": "y",
+            "start": 31007,
+            "end": 31067,
+            "confidence": 0.086,
+            "speaker": null
+        },
+        {
+            "text": "lo",
+            "start": 31107,
+            "end": 31187,
+            "confidence": 0.737,
+            "speaker": null
+        },
+        {
+            "text": "que",
+            "start": 31227,
+            "end": 31327,
+            "confidence": 0.629,
+            "speaker": null
+        },
+        {
+            "text": "reviento",
+            "start": 31407,
+            "end": 31947,
+            "confidence": 0.92,
+            "speaker": null
+        },
+        {
+            "text": "Y",
+            "start": 31967,
+            "end": 31987,
+            "confidence": 0.002,
+            "speaker": null
+        },
+        {
+            "text": "los",
+            "start": 32006,
+            "end": 32308,
+            "confidence": 0.647,
+            "speaker": null
+        },
+        {
+            "text": "sepulto,",
+            "start": 32368,
+            "end": 32908,
+            "confidence": 0.798,
+            "speaker": null
+        },
+        {
+            "text": "les",
+            "start": 32928,
+            "end": 33328,
+            "confidence": 0.796,
+            "speaker": null
+        },
+        {
+            "text": "inculco",
+            "start": 33348,
+            "end": 33948,
+            "confidence": 0.851,
+            "speaker": null
+        },
+        {
+            "text": "Un",
+            "start": 34189,
+            "end": 34269,
+            "confidence": 0.994,
+            "speaker": null
+        },
+        {
+            "text": "poco",
+            "start": 34329,
+            "end": 34589,
+            "confidence": 0.905,
+            "speaker": null
+        },
+        {
+            "text": "de",
+            "start": 34629,
+            "end": 34729,
+            "confidence": 0.817,
+            "speaker": null
+        },
+        {
+            "text": "mi",
+            "start": 34789,
+            "end": 34889,
+            "confidence": 0.921,
+            "speaker": null
+        },
+        {
+            "text": "dialecto",
+            "start": 34929,
+            "end": 35509,
+            "confidence": 0.727,
+            "speaker": null
+        },
+        {
+            "text": "Cumplo",
+            "start": 35769,
+            "end": 36049,
+            "confidence": 0.907,
+            "speaker": null
+        },
+        {
+            "text": "mis",
+            "start": 36089,
+            "end": 36190,
+            "confidence": 0.664,
+            "speaker": null
+        },
+        {
+            "text": "proyectos",
+            "start": 36250,
+            "end": 36850,
+            "confidence": 0.903,
+            "speaker": null
+        },
+        {
+            "text": "Tumbo",
+            "start": 37070,
+            "end": 37290,
+            "confidence": 0.787,
+            "speaker": null
+        },
+        {
+            "text": "a",
+            "start": 37330,
+            "end": 37390,
+            "confidence": 0.495,
+            "speaker": null
+        },
+        {
+            "text": "los",
+            "start": 37410,
+            "end": 37530,
+            "confidence": 0.876,
+            "speaker": null
+        },
+        {
+            "text": "ineptos",
+            "start": 37610,
+            "end": 38151,
+            "confidence": 0.791,
+            "speaker": null
+        },
+        {
+            "text": "Apunto",
+            "start": 38431,
+            "end": 38771,
+            "confidence": 0.902,
+            "speaker": null
+        },
+        {
+            "text": "directo",
+            "start": 38831,
+            "end": 39391,
+            "confidence": 0.85,
+            "speaker": null
+        },
+        {
+            "text": "y",
+            "start": 39431,
+            "end": 39511,
+            "confidence": 0.358,
+            "speaker": null
+        },
+        {
+            "text": "encuentro",
+            "start": 39551,
+            "end": 39951,
+            "confidence": 0.847,
+            "speaker": null
+        },
+        {
+            "text": "lo",
+            "start": 40031,
+            "end": 40112,
+            "confidence": 0.841,
+            "speaker": null
+        },
+        {
+            "text": "que",
+            "start": 40152,
+            "end": 40272,
+            "confidence": 0.719,
+            "speaker": null
+        },
+        {
+            "text": "busco",
+            "start": 40372,
+            "end": 40692,
+            "confidence": 0.808,
+            "speaker": null
+        },
+        {
+            "text": "Si",
+            "start": 41032,
+            "end": 41472,
+            "confidence": 0.696,
+            "speaker": null
+        },
+        {
+            "text": "me",
+            "start": 41492,
+            "end": 41572,
+            "confidence": 0.301,
+            "speaker": null
+        },
+        {
+            "text": "luzco,",
+            "start": 41632,
+            "end": 42072,
+            "confidence": 0.608,
+            "speaker": null
+        },
+        {
+            "text": "no",
+            "start": 42132,
+            "end": 42192,
+            "confidence": 0.656,
+            "speaker": null
+        },
+        {
+            "text": "es",
+            "start": 42212,
+            "end": 42272,
+            "confidence": 0.242,
+            "speaker": null
+        },
+        {
+            "text": "que",
+            "start": 42292,
+            "end": 42392,
+            "confidence": 0.664,
+            "speaker": null
+        },
+        {
+            "text": "me",
+            "start": 42432,
+            "end": 42532,
+            "confidence": 0.724,
+            "speaker": null
+        },
+        {
+            "text": "crea",
+            "start": 42592,
+            "end": 42792,
+            "confidence": 0.807,
+            "speaker": null
+        },
+        {
+            "text": "el",
+            "start": 42812,
+            "end": 42872,
+            "confidence": 0.778,
+            "speaker": null
+        },
+        {
+            "text": "cuento",
+            "start": 42952,
+            "end": 43332,
+            "confidence": 0.813,
+            "speaker": null
+        },
+        {
+            "text": "Es",
+            "start": 43392,
+            "end": 43432,
+            "confidence": 0.16,
+            "speaker": null
+        },
+        {
+            "text": "que",
+            "start": 43472,
+            "end": 43572,
+            "confidence": 0.855,
+            "speaker": null
+        },
+        {
+            "text": "digo",
+            "start": 43632,
+            "end": 43853,
+            "confidence": 0.799,
+            "speaker": null
+        },
+        {
+            "text": "lo",
+            "start": 43933,
+            "end": 44013,
+            "confidence": 0.834,
+            "speaker": null
+        },
+        {
+            "text": "que",
+            "start": 44053,
+            "end": 44173,
+            "confidence": 0.646,
+            "speaker": null
+        },
+        {
+            "text": "siento,",
+            "start": 44293,
+            "end": 44653,
+            "confidence": 0.884,
+            "speaker": null
+        },
+        {
+            "text": "no",
+            "start": 44713,
+            "end": 44793,
+            "confidence": 0.652,
+            "speaker": null
+        },
+        {
+            "text": "importa",
+            "start": 44833,
+            "end": 45133,
+            "confidence": 0.949,
+            "speaker": null
+        },
+        {
+            "text": "si",
+            "start": 45193,
+            "end": 45293,
+            "confidence": 0.72,
+            "speaker": null
+        },
+        {
+            "text": "te",
+            "start": 45333,
+            "end": 45393,
+            "confidence": 0.567,
+            "speaker": null
+        },
+        {
+            "text": "insulto",
+            "start": 45433,
+            "end": 45873,
+            "confidence": 0.812,
+            "speaker": null
+        },
+        {
+            "text": "No",
+            "start": 46193,
+            "end": 46233,
+            "confidence": 0.102,
+            "speaker": null
+        },
+        {
+            "text": "es",
+            "start": 46253,
+            "end": 46293,
+            "confidence": 0.156,
+            "speaker": null
+        },
+        {
+            "text": "que",
+            "start": 46333,
+            "end": 46413,
+            "confidence": 0.953,
+            "speaker": null
+        },
+        {
+            "text": "sea",
+            "start": 46453,
+            "end": 46613,
+            "confidence": 0.823,
+            "speaker": null
+        },
+        {
+            "text": "perfecto,",
+            "start": 46673,
+            "end": 47273,
+            "confidence": 0.879,
+            "speaker": null
+        },
+        {
+            "text": "no",
+            "start": 47353,
+            "end": 47453,
+            "confidence": 0.821,
+            "speaker": null
+        },
+        {
+            "text": "falle",
+            "start": 47493,
+            "end": 47773,
+            "confidence": 0.819,
+            "speaker": null
+        },
+        {
+            "text": "ning\u00fan",
+            "start": 47833,
+            "end": 48093,
+            "confidence": 0.993,
+            "speaker": null
+        },
+        {
+            "text": "punto",
+            "start": 48213,
+            "end": 48533,
+            "confidence": 0.888,
+            "speaker": null
+        },
+        {
+            "text": "Tampoco",
+            "start": 48633,
+            "end": 48934,
+            "confidence": 0.874,
+            "speaker": null
+        },
+        {
+            "text": "es",
+            "start": 48974,
+            "end": 49034,
+            "confidence": 0.816,
+            "speaker": null
+        },
+        {
+            "text": "que",
+            "start": 49074,
+            "end": 49154,
+            "confidence": 0.829,
+            "speaker": null
+        },
+        {
+            "text": "sea",
+            "start": 49214,
+            "end": 49374,
+            "confidence": 0.85,
+            "speaker": null
+        },
+        {
+            "text": "culto,",
+            "start": 49474,
+            "end": 49794,
+            "confidence": 0.918,
+            "speaker": null
+        },
+        {
+            "text": "es",
+            "start": 49834,
+            "end": 49894,
+            "confidence": 0.5,
+            "speaker": null
+        },
+        {
+            "text": "que",
+            "start": 49934,
+            "end": 50034,
+            "confidence": 0.767,
+            "speaker": null
+        },
+        {
+            "text": "nac\u00ed",
+            "start": 50094,
+            "end": 50374,
+            "confidence": 0.92,
+            "speaker": null
+        },
+        {
+            "text": "para",
+            "start": 50454,
+            "end": 50694,
+            "confidence": 0.933,
+            "speaker": null
+        },
+        {
+            "text": "esto",
+            "start": 50854,
+            "end": 51114,
+            "confidence": 0.914,
+            "speaker": null
+        },
+        {
+            "text": "Esto,",
+            "start": 51854,
+            "end": 52314,
+            "confidence": 0.682,
+            "speaker": null
+        },
+        {
+            "text": "m\u00e1s",
+            "start": 52374,
+            "end": 52514,
+            "confidence": 0.561,
+            "speaker": null
+        },
+        {
+            "text": "la",
+            "start": 52554,
+            "end": 52634,
+            "confidence": 0.816,
+            "speaker": null
+        },
+        {
+            "text": "rienda",
+            "start": 52694,
+            "end": 52974,
+            "confidence": 0.909,
+            "speaker": null
+        },
+        {
+            "text": "del",
+            "start": 53054,
+            "end": 53254,
+            "confidence": 0.9,
+            "speaker": null
+        },
+        {
+            "text": "asunto",
+            "start": 53314,
+            "end": 53794,
+            "confidence": 0.758,
+            "speaker": null
+        },
+        {
+            "text": "Por",
+            "start": 53874,
+            "end": 54014,
+            "confidence": 0.933,
+            "speaker": null
+        },
+        {
+            "text": "el",
+            "start": 54054,
+            "end": 54115,
+            "confidence": 0.843,
+            "speaker": null
+        },
+        {
+            "text": "pico,",
+            "start": 54195,
+            "end": 54455,
+            "confidence": 0.694,
+            "speaker": null
+        },
+        {
+            "text": "los",
+            "start": 54515,
+            "end": 54615,
+            "confidence": 0.838,
+            "speaker": null
+        },
+        {
+            "text": "corruptos,",
+            "start": 54655,
+            "end": 55075,
+            "confidence": 0.824,
+            "speaker": null
+        },
+        {
+            "text": "esto",
+            "start": 55175,
+            "end": 55315,
+            "confidence": 0.657,
+            "speaker": null
+        },
+        {
+            "text": "es",
+            "start": 55355,
+            "end": 55415,
+            "confidence": 0.542,
+            "speaker": null
+        },
+        {
+            "text": "lo",
+            "start": 55455,
+            "end": 55535,
+            "confidence": 0.562,
+            "speaker": null
+        },
+        {
+            "text": "que",
+            "start": 55555,
+            "end": 55635,
+            "confidence": 0.835,
+            "speaker": null
+        },
+        {
+            "text": "yo",
+            "start": 55735,
+            "end": 55875,
+            "confidence": 0.694,
+            "speaker": null
+        },
+        {
+            "text": "ofrezco",
+            "start": 55895,
+            "end": 56335,
+            "confidence": 0.789,
+            "speaker": null
+        },
+        {
+            "text": "Tuve",
+            "start": 56635,
+            "end": 56855,
+            "confidence": 0.562,
+            "speaker": null
+        },
+        {
+            "text": "claro",
+            "start": 56895,
+            "end": 57135,
+            "confidence": 0.579,
+            "speaker": null
+        },
+        {
+            "text": "el",
+            "start": 57175,
+            "end": 57235,
+            "confidence": 0.89,
+            "speaker": null
+        },
+        {
+            "text": "rumbo",
+            "start": 57315,
+            "end": 57515,
+            "confidence": 0.611,
+            "speaker": null
+        },
+        {
+            "text": "y",
+            "start": 57575,
+            "end": 57635,
+            "confidence": 0.504,
+            "speaker": null
+        },
+        {
+            "text": "ha",
+            "start": 57655,
+            "end": 57715,
+            "confidence": 0.714,
+            "speaker": null
+        },
+        {
+            "text": "llegado",
+            "start": 57775,
+            "end": 58155,
+            "confidence": 0.871,
+            "speaker": null
+        },
+        {
+            "text": "mi",
+            "start": 58295,
+            "end": 58435,
+            "confidence": 0.755,
+            "speaker": null
+        },
+        {
+            "text": "momento",
+            "start": 58495,
+            "end": 58795,
+            "confidence": 0.857,
+            "speaker": null
+        },
+        {
+            "text": "As\u00ed",
+            "start": 58815,
+            "end": 59015,
+            "confidence": 0.627,
+            "speaker": null
+        },
+        {
+            "text": "que",
+            "start": 59055,
+            "end": 59175,
+            "confidence": 0.774,
+            "speaker": null
+        },
+        {
+            "text": "ahora",
+            "start": 59235,
+            "end": 59476,
+            "confidence": 0.903,
+            "speaker": null
+        },
+        {
+            "text": "me",
+            "start": 59556,
+            "end": 59656,
+            "confidence": 0.802,
+            "speaker": null
+        },
+        {
+            "text": "convierto",
+            "start": 59716,
+            "end": 60096,
+            "confidence": 0.866,
+            "speaker": null
+        },
+        {
+            "text": "en",
+            "start": 60156,
+            "end": 60216,
+            "confidence": 0.904,
+            "speaker": null
+        },
+        {
+            "text": "el",
+            "start": 60236,
+            "end": 60336,
+            "confidence": 0.7,
+            "speaker": null
+        },
+        {
+            "text": "mejor",
+            "start": 60396,
+            "end": 60636,
+            "confidence": 0.986,
+            "speaker": null
+        },
+        {
+            "text": "rapper",
+            "start": 60696,
+            "end": 61076,
+            "confidence": 0.697,
+            "speaker": null
+        },
+        {
+            "text": "del",
+            "start": 61096,
+            "end": 61196,
+            "confidence": 0.451,
+            "speaker": null
+        },
+        {
+            "text": "mundo",
+            "start": 61236,
+            "end": 62776,
+            "confidence": 0.586,
+            "speaker": null
+        },
+        {
+            "text": "Son",
+            "start": 62836,
+            "end": 62976,
+            "confidence": 0.809,
+            "speaker": null
+        },
+        {
+            "text": "inmundos",
+            "start": 63036,
+            "end": 63416,
+            "confidence": 0.743,
+            "speaker": null
+        },
+        {
+            "text": "y",
+            "start": 63436,
+            "end": 63456,
+            "confidence": 0.002,
+            "speaker": null
+        },
+        {
+            "text": "grotescos",
+            "start": 63616,
+            "end": 64537,
+            "confidence": 0.954,
+            "speaker": null
+        },
+        {
+            "text": "As\u00ed",
+            "start": 64617,
+            "end": 64777,
+            "confidence": 0.914,
+            "speaker": null
+        },
+        {
+            "text": "que",
+            "start": 64816,
+            "end": 64897,
+            "confidence": 0.854,
+            "speaker": null
+        },
+        {
+            "text": "los",
+            "start": 64956,
+            "end": 65057,
+            "confidence": 0.677,
+            "speaker": null
+        },
+        {
+            "text": "quiebro",
+            "start": 65157,
+            "end": 65516,
+            "confidence": 0.785,
+            "speaker": null
+        },
+        {
+            "text": "en",
+            "start": 65577,
+            "end": 65637,
+            "confidence": 0.846,
+            "speaker": null
+        },
+        {
+            "text": "fracci\u00f3n",
+            "start": 65677,
+            "end": 66017,
+            "confidence": 0.898,
+            "speaker": null
+        },
+        {
+            "text": "de",
+            "start": 66077,
+            "end": 66157,
+            "confidence": 0.845,
+            "speaker": null
+        },
+        {
+            "text": "segundos",
+            "start": 66257,
+            "end": 66717,
+            "confidence": 0.834,
+            "speaker": null
+        },
+        {
+            "text": "Me",
+            "start": 68314,
+            "end": 68394,
+            "confidence": 0.866,
+            "speaker": null
+        },
+        {
+            "text": "los",
+            "start": 68434,
+            "end": 68574,
+            "confidence": 0.978,
+            "speaker": null
+        },
+        {
+            "text": "garcho",
+            "start": 68634,
+            "end": 68955,
+            "confidence": 0.914,
+            "speaker": null
+        },
+        {
+            "text": "a",
+            "start": 68995,
+            "end": 69035,
+            "confidence": 0.519,
+            "speaker": null
+        },
+        {
+            "text": "los",
+            "start": 69075,
+            "end": 69535,
+            "confidence": 0.457,
+            "speaker": null
+        },
+        {
+            "text": "15",
+            "start": 69545,
+            "end": 69625,
+            "confidence": 0.5,
+            "speaker": null
+        },
+        {
+            "text": "juntos",
+            "start": 69635,
+            "end": 70016,
+            "confidence": 0.689,
+            "speaker": null
+        },
+        {
+            "text": "y",
+            "start": 70036,
+            "end": 70056,
+            "confidence": 0.003,
+            "speaker": null
+        },
+        {
+            "text": "cumplo",
+            "start": 70276,
+            "end": 70676,
+            "confidence": 0.874,
+            "speaker": null
+        },
+        {
+            "text": "mi",
+            "start": 70716,
+            "end": 70796,
+            "confidence": 0.743,
+            "speaker": null
+        },
+        {
+            "text": "sue\u00f1o",
+            "start": 70856,
+            "end": 71097,
+            "confidence": 0.906,
+            "speaker": null
+        },
+        {
+            "text": "en",
+            "start": 71157,
+            "end": 71217,
+            "confidence": 0.885,
+            "speaker": null
+        },
+        {
+            "text": "este",
+            "start": 71277,
+            "end": 71437,
+            "confidence": 0.991,
+            "speaker": null
+        },
+        {
+            "text": "evento.",
+            "start": 71517,
+            "end": 71957,
+            "confidence": 0.818,
+            "speaker": null
+        },
+        {
+            "text": "\u00a1Tiempo!",
+            "start": 73098,
+            "end": 75941,
+            "confidence": 0.535,
+            "speaker": null
+        },
+        {
+            "text": "\u00a1Fuerte",
+            "start": 75981,
+            "end": 76261,
+            "confidence": 0.857,
+            "speaker": null
+        },
+        {
+            "text": "ese",
+            "start": 76301,
+            "end": 76462,
+            "confidence": 0.78,
+            "speaker": null
+        },
+        {
+            "text": "ruido!",
+            "start": 76542,
+            "end": 76782,
+            "confidence": 0.946,
+            "speaker": null
+        }
+    ],
+    "utterances": null,
+    "confidence": 0.724741293532338,
+    "audio_duration": 77,
+    "punctuate": true,
+    "format_text": false,
+    "dual_channel": null,
+    "webhook_url": null,
+    "webhook_status_code": null,
+    "webhook_auth": false,
+    "webhook_auth_header_name": null,
+    "speed_boost": false,
+    "auto_highlights_result": null,
+    "auto_highlights": false,
+    "audio_start_from": null,
+    "audio_end_at": null,
+    "word_boost": [],
+    "boost_param": null,
+    "filter_profanity": false,
+    "redact_pii": false,
+    "redact_pii_audio": false,
+    "redact_pii_audio_quality": null,
+    "redact_pii_policies": null,
+    "redact_pii_sub": null,
+    "speaker_labels": false,
+    "content_safety": false,
+    "iab_categories": false,
+    "content_safety_labels": {
+        "status": "unavailable",
+        "results": [],
+        "summary": {}
+    },
+    "iab_categories_result": {
+        "status": "unavailable",
+        "results": [],
+        "summary": {}
+    },
+    "language_detection": false,
+    "custom_spelling": null,
+    "throttled": null,
+    "auto_chapters": false,
+    "summarization": false,
+    "summary_type": null,
+    "summary_model": null,
+    "custom_topics": false,
+    "topics": [],
+    "speech_threshold": null,
+    "chapters": null,
+    "disfluencies": false,
+    "entity_detection": false,
+    "entities": null,
+    "speakers_expected": null,
+    "summary": null,
+    "sentiment_analysis": false,
+    "sentiment_analysis_results": null
+}
