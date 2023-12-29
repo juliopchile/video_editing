@@ -1,7 +1,6 @@
 import os.path
-
 from wrapper import *
-import json
+
 
 if __name__ == '__main__':
     # --- Preparación --- #
@@ -10,7 +9,7 @@ if __name__ == '__main__':
 
     # --- Transcripción --- #
     # Se usa la API de AssemblyAI para transcribir automáticamente lo dicho en un audio
-    # step_1()
+    step_1()
 
     # --- Subtitular --- #
     # Se ajusta la transcripción a los tiempos designados para los subtítulos
@@ -22,5 +21,5 @@ if __name__ == '__main__':
 
     # --- Traducción --- #
     # Se usa la API de OpenAI para traducir los subtítulos
-    step_4()
+    # step_4()
 
