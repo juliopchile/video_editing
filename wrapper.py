@@ -9,14 +9,64 @@ from functions.assembly_AI import AssemblyAI
 
 
 # Paso 0
-def video2audio():
+def video2audio(video="bin/video", audio="bin/audio", extension="wav"):
     """
     Convierte todos los archivos dentro del directorio video a audios en el directorio audio.
     :return:
     """
-    video_path = os.path.normpath("bin/video")
-    audio_path = os.path.normpath("bin/audio")
-    ffmpeg.process_videos(video_path, audio_path)
+    video_path = os.path.normpath(video)
+    audio_path = os.path.normpath(audio)
+    ffmpeg.process_videos(video_path, audio_path, extension)
+
+
+def manage_transcriptions(audio_path, data_path):
+    """
+    Gestiona el proceso de transcripción de los audios en **audio_path** y son guardados en el directorio **data_path**.
+    :param audio_path:
+    :param data_path:
+    :return:
+    """
+    # Ensure the paths are valid
+    audio_path = os.path.normpath(audio_path)
+    data_path = os.path.normpath(data_path)
+
+    # Ensure the data_path directory exists, or create it if necessary
+    os.makedirs(data_path, exist_ok=True)
+
+    # Get a list of existing data files in the data_path
+    existing_data_transcriptions = set(os.listdir(data_path))
+
+    # Check whether the audio_path corresponds to a directory or a single file
+    if os.path.isfile(audio_path):
+        file = os.path.basename(audio_path)                     # get the audio name + extension
+        audio_name, _ = os.path.splitext(file)                  # get only the audio name
+        data_file = os.path.join(data_path, audio_name)         # use that name for the full path of data_file
+
+        # Check if the corresponding audio file have already been transcribed
+        if os.path.basename(data_file+'.json') not in existing_data_transcriptions:
+            print(f"Transcribing audio: {file}")
+            transcribe_and_save_data(audio_path, data_file)
+        else:
+            print(f"Skipped: {file} (Audio already transcribed)")
+            # TODO preguntar si quiere realizar la transcripción nuevamente
+
+    elif os.path.isdir(audio_path):
+        # Iterate through files in the audio_path directory
+        for file in os.listdir(audio_path):
+            audio_name, _ = os.path.splitext(file)
+            data_file = os.path.join(data_path, audio_name)
+            audio_file = os.path.join(audio_path, file)
+
+            # Check if the corresponding audio file have already been transcribed
+            if os.path.basename(data_file+'.json') not in existing_data_transcriptions:
+                print(f"Transcribing audio: {file}")
+                transcribe_and_save_data(audio_file, data_file)
+            else:
+                print(f"Skipped: {file} (Audio already transcribed)")
+                # TODO preguntar si quiere realizar la transcripción nuevamente
+
+    else:
+        print("No audio file given.")
 
 
 # Paso 1
@@ -28,9 +78,14 @@ def transcribe_and_save_data(audio_file, transcription_data):
     :return:
     """
     transcript = AssemblyAI(api_key=API_KEY_ASSEMBLYAI)
-    configuration = {'language_code': 'es'}
+    configuration = {'language_code': 'es',
+                    'punctuate': True,
+                    'format_text': False,
+                    'speaker_labels': False}
+
     transcript.config(audio_file=audio_file, configuration=configuration)
     transcript.make_and_save_transcription(transcription_data)
+
 
 
 def create_transcription_using_timestamps(original_subs, time_stamps_file, transcription_data, transcription_text):
@@ -95,6 +150,13 @@ def create_save_return_subtitles(sections, sections_clean, subtitulos_json):
     :param str subtitulos_json: Path donde guardar los subtítulos
     :return: Una lista de objetos de la clase Subtitulo.
     """
+    # Check if the file already exists
+    if os.path.exists(subtitulos_json):
+        overwrite = input(f"The file {os.path.basename(subtitulos_json)} already exists. Do you want to overwrite it? (yes/no): ").lower()
+        if overwrite != 'yes':
+            print("Subtitles were not saved.")
+            return
+
     print("Creating and saving Subtitulo objects")
 
     # Create list of Subtitulo using sections
@@ -111,7 +173,6 @@ def translate_subtitles(subtitulos_json: str, prompt: str):
     subtitulos = util.load_subtitulos_json(subtitulos_json)
 
     # Attempt translation for each one
-    print("Translating the Subtitulo instances")
     for subtitulo in tqdm(subtitulos, unit='B', unit_scale=True):
         subtitulo.translate(prompt, API_KEY_OPENAI, "gpt-4-1106-preview")
 
@@ -174,7 +235,10 @@ def step_0():
     - Prepara el audio del video para usarla en el video
     :return:
     """
-    video2audio()
+    video = "bin/video"
+    audio = "bin/audio"
+    extension = "flac"
+    video2audio(video, audio, extension)
 
 
 def step_1():
@@ -183,11 +247,10 @@ def step_1():
     - Guardado de la data de la transcripción.
     :return:
     """
-    audio_file = 'bin/audio/RedBull_INT_2023.mp3'
-    transcription_data = 'bin/Step_1/data'
+    audio_path = 'bin/audio'
+    data_path = 'bin/transcription/src'
 
-    transcribe_and_save_data(audio_file, transcription_data)
-
+    manage_transcriptions(audio_path, data_path)
 
 def step_2():
     """
@@ -195,17 +258,25 @@ def step_2():
     - Se crea un nuevo archivo *.ass* con los subtítulos automáticos añadidos.
     :return:
     """
-    transcription_data = 'bin/Step_1/data.json'
-    original_subs = 'bin/Step_1/original_subs.ass'
-    time_stamps_file = 'bin/Step_1/time_stamps.json'
-    transcription_text = 'bin/Step_1/transcription_text.txt'
-    parsed_subs = 'bin/Step_1/parsed_subs.txt'
-    updated_subs = 'bin/Step_1/updated_subs.ass'
+    # Source
+    transcription_data = 'bin/transcription/src/example_video_(Vocals).json'   # Debe ser especificado
+    timing_subs = 'bin/transcription/src/timing_subs.ass'                      # Define cuando irán los subtítulos
 
-    create_transcription_using_timestamps(original_subs, time_stamps_file, transcription_data, transcription_text)
+    # Temporales
+    time_stamps_file = 'bin/transcription/temp/time_stamps.json'
+    transcription_text = 'bin/transcription/temp/transcription_text.txt'
+    parsed_subs = 'bin/transcription/temp/parsed_subs.txt'
 
-    create_updated_subs_ass(time_stamps_file, transcription_text, original_subs, parsed_subs, updated_subs)
+    # Output
+    updated_subs = 'bin/transcription/updated_subs.ass'
 
+    create_transcription_using_timestamps(timing_subs, time_stamps_file, transcription_data, transcription_text)
+
+    create_updated_subs_ass(time_stamps_file, transcription_text, timing_subs, parsed_subs, updated_subs)
+
+
+def manage_subtitles():
+    pass
 
 def step_3():
     """
@@ -213,19 +284,24 @@ def step_3():
     - Se crean objeto tipo Subtitulo y se guardan en
     :return:
     """
-    spanish_subs = 'bin/Step_2/updated_subs.ass'
-    subtitulos_json = 'bin/Step_2/subtitulos.json'
-    transcription_text = 'bin/Step_2/transcription_text.txt'
-    subtitulos_definitivos = 'bin/Step_2/subtitulos_definitivos.ass'
-    time_stamps_file = 'bin/Step_2/time_stamps.json'
-    parsed_subs = 'bin/Step_2/parsed_subs.txt'
-    prompt = "You translate Spanish to English, line by line. Your primary duty involves translating phrases and rhymes originating from rap battles. It's essential to consider the context and idiomatic expressions used in the source material. Ensure that the translation maintains the same line count as the original."
+    spanish_subs = 'bin/translation/src/updated_subs_V2.ass'
+    subtitulos_json = 'bin/translation/temp/subtitulos.json'
 
     # Extraer las secciones de subtítulos.
-    # sections, sections_clean = util.extract_sections_from_subs(spanish_subs)
+    sections, sections_clean = util.extract_sections_from_subs(spanish_subs)
 
     # Crear, guarda y retorna una lista de subtítulos de la clase Subtitulo.
-    # create_save_return_subtitles(sections, sections_clean, subtitulos_json)
+    create_save_return_subtitles(sections, sections_clean, subtitulos_json)
+
+
+def step_4():
+    spanish_subs = 'bin/translation/src/updated_subs_V2.ass'
+    subtitulos_json = 'bin/translation/temp/subtitulos.json'
+    transcription_text = 'bin/translation/temp/transcription_text.txt'
+    subtitulos_definitivos = 'bin/translation/subtitulos_finales.ass'
+    time_stamps_file = 'bin/translation/temp/time_stamps.json'
+    parsed_subs = 'bin/translation/temp/parsed_subs.txt'
+    prompt = "You translate Spanish to English. Your primary duty involves translating phrases and rhymes originating from rap battles. It's essential to consider the context and idiomatic expressions used in the source material. Ensure that the translation maintains the same line count as the original."
 
     # Traducir subtítulos
     translate_subtitles(subtitulos_json, prompt)

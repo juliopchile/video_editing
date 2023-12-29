@@ -129,7 +129,7 @@ class AssemblyAI:
         polling_response = requests.get(url=polling_endpoint, headers=self.get_header(False)).json()
         return polling_response
 
-    def polling_transcription_url(self, n=30):
+    def polling_transcription_url(self, n=15):
         """
         Continuously polls AssemblyAI for the transcription until it's completed or an error occurs.
 
@@ -146,7 +146,7 @@ class AssemblyAI:
         while True:
             data = self.poll()
             if data['status'] == 'completed':
-                print('Transcription Complete.\n')
+                print('Transcription Complete.')
                 self.data = data
                 self.error = None
                 return data, None

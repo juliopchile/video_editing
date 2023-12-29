@@ -30,13 +30,13 @@ class Subtitulo:
                                                      _prompt=prompt,
                                                      _model=model)
                 self.done_translating = True
-            except openai.OpenAIError as e:  # Replace with the actual exception
-                print(f"Error {e}")
+            except openai.OpenAIError as error:  # Replace with the actual exception
+                print(f"OpenAIError {error}")
                 self.done_translating = False
             finally:
                 pass
         else:
-            pass
+            print("Skip (already translated)")
 
     @classmethod
     def from_dict(cls, data):
@@ -87,7 +87,7 @@ def save_data(data, title):
     filename = title + '.json'
     with open(filename, 'w') as json_file:
         json.dump(data, json_file, indent=4)
-    print('Data saved')
+    print('Data saved\n')
 
 
 # --- AEGIS SUB PARSING --- #
@@ -268,8 +268,6 @@ def create_composed_subtitles(_time_stamps: list[tuple[str, str]], _transcriptio
     with open(_subtitles_path, 'w', encoding="utf-8") as subtitles_file:
         for subtitle in subtitles:
             subtitles_file.write(subtitle + '\n')
-
-    print(f"Subtitles file '{_subtitles_path}' has been created.")
 
 
 def save_paragraphs_to_file(paragraphs, file_path):

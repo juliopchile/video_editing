@@ -49,23 +49,22 @@ def extract_audio(in_file: str, out_file: str = None, extension: str = None):
         if out_path == '':
             out_file = os.path.join(in_path, out_file)
 
-    out_file = out_file + ex
+    out_file_t = out_file + ex
 
     # FFmpeg command
+
     ffmpeg_cmd = [
         'ffmpeg',
         '-i', in_file,
-        '-q:a', '0',
-        '-map', 'a',
-        '-c:a', extension,  # Transcoding audio stream to the specified codec
-        out_file
+        '-nv',
+        out_file_t
     ]
 
     try:
         subprocess.run(ffmpeg_cmd, check=True)
-        print(f"Conversion successful: {in_file} -> {out_file}")
+        print(f"Conversion successful: {in_file} -> {out_file_t}")
     except subprocess.CalledProcessError as e:
-        print(f"Conversion failed: {e}")
+        print(f"Conversion failed: {e.cmd}")
 
 
 def convert_to_mp4(in_file: str, out_file: str):
@@ -97,7 +96,7 @@ def convert_to_mp4(in_file: str, out_file: str):
         print(f"Conversion failed: {e}")
 
 
-def process_videos(video_path, audio_path, audio_ext='.mp3'):
+def process_videos(video_path, audio_path, audio_ext='mp3'):
     """
     This function search all videos inside the video_path and copy them as audio in the audio_path.
     :param video_path: The path for the input video files.
@@ -112,17 +111,17 @@ def process_videos(video_path, audio_path, audio_ext='.mp3'):
 
     # Iterate through files in the video_path directory
     for filename in os.listdir(video_path):
-        if filename.endswith(('.mp4', '.avi', '.mkv')):  # You can add more video extensions if needed
+        if filename.endswith(('.mp4', '.avi', '.mkv', '.mov')):  # You can add more video extensions if needed
             video_file = os.path.join(video_path, filename)
-            audio_file = os.path.join(audio_path, os.path.splitext(filename)[0] + audio_ext)
+            audio_file = os.path.join(audio_path, os.path.splitext(filename)[0])
+            print('\n\n')
 
             # Check if the corresponding audio file already exists
-            if os.path.basename(audio_file) not in existing_audio_files:
-                extract_audio(video_file, audio_file)
+            if os.path.basename(audio_file+'.'+audio_ext) not in existing_audio_files:
+                extract_audio(video_file, audio_file, audio_ext)
                 print(f"Extracted audio from: {video_file}")
             else:
                 print(f"Skipped: {video_file} (Audio already exists)")
-
 
 
 if __name__ == "__main__":

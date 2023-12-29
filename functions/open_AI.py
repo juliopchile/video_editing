@@ -23,7 +23,7 @@ def translate_gpt(_api_key: str, _message: str, _prompt: str, _examples = None, 
             model=_model,  # Choose the chat model for translation
             messages=_messages,
             max_tokens=1024, # Set the maximum number of tokens in the response
-            temperature=0.5,
+            temperature=0.33,
         )
 
         # Extract the translated text from the response
@@ -32,4 +32,4 @@ def translate_gpt(_api_key: str, _message: str, _prompt: str, _examples = None, 
         return translated_text
 
     except openai.OpenAIError:  # Replace with the actual exception
-        print("Rate limit exceeded, waiting for 60 seconds")
+        raise openai.OpenAIError
