@@ -1,2 +1,2 @@
 # video_editing
-Código que usaba para ayudarme a aditar subtitulos para batallas de rap.
+Código que usaba para ayudarme a editar subtitulos para batallas de rap.
