@@ -1,92 +1,26 @@
-import json
+import os
 import re
+import json
+from typing import Any
 
 import numpy as np
-import openai
 
-from functions import open_AI
-
-INITIAL_INSTRUCTION = "Translate the given transcription"
-
-class Subtitulo:
-    def __init__(self, spanish, clean_spanish, english="", done_translating=False):
-        self.spanish = spanish
-        self.clean_spanish = clean_spanish
-        self.english = english
-        self.done_translating = done_translating
-
-    def to_dict(self):
-        return {
-            "spanish": self.spanish,
-            "clean_spanish": self.clean_spanish,
-            "english": self.english,
-            "done_translating": self.done_translating
-        }
-
-    def translate(self):
-        if not self.done_translating:
-            try:
-                #self.english = open_AI.translate_gpt(_api_key=api_key, _message=self.clean_spanish, _prompt=prompt, _model=model)
-                self.english = open_AI.translate_text(message=self.clean_spanish, initial_instruction=INITIAL_INSTRUCTION)
-                self.done_translating = True
-            except openai.OpenAIError as error:  # Replace with the actual exception
-                print(f"OpenAIError {error}")
-                self.done_translating = False
-            finally:
-                pass
-        else:
-            print("Skip (already translated)")
-
-    @classmethod
-    def from_dict(cls, data):
-        return cls(
-            spanish=data["spanish"],
-            clean_spanish=data["clean_spanish"],
-            english=data["english"],
-            done_translating=data["done_translating"]
-        )
+from functions.subtitulos import Subtitulo
 
 
-# --- TRANSCRIPTION --- #
-def read_file(filename, chunk_size):
-    with open(filename, 'rb') as f:
-        while True:
-            data = f.read(chunk_size)
-            if not data:
-                break
-            yield data
-
-
-def read_file_with_progress(filename, chunk_size, progress):
-    with open(filename, 'rb') as f:
-        while True:
-            data = f.read(chunk_size)
-            if not data:
-                break
-            progress.update(len(data))
-            yield data
-    progress.close()
-
-
-def save_transcript(data, title):
-    filename = title + '.txt'
-    with open(filename, 'w') as text_file:
-        text_file.write(data['text'])
-    print('Transcript saved')
-
-
-def save_words(data, title):
-    filename = title + '.json'
-    with open(filename, 'w') as json_file:
-        json.dump(data['words'], json_file, indent=4)
-    print('Words saved')
-
-
-def save_data(data, title):
-    filename = title + '.json'
-    with open(filename, 'w') as json_file:
-        json.dump(data, json_file, indent=4)
-    print('Data saved\n')
+def limpiar_nombre_archivo(path_completo: str) -> str:
+    # 1. Separar directorio y nombre de archivo
+    directorio, filename = os.path.split(path_completo)
+    # 2. Separar nombre y extensión
+    nombre, extension = os.path.splitext(filename)
+    # 3. Quitar número inicial seguido de guión bajo
+    nombre = re.sub(r'^\d+_', '', nombre)
+    # 4. Quitar sufijo _(Vocals) (case‑insensitive)
+    nombre = re.sub(r'_\(vocals\)$', '', nombre, flags=re.IGNORECASE)
+    # 5. Reconstruir nombre limpio con extensión
+    archivo_limpio = nombre + extension
+    # 6. Volver a juntar ruta
+    return os.path.join(directorio, archivo_limpio)
 
 
 # --- AEGIS SUB PARSING --- #
@@ -174,9 +108,12 @@ def save_timestamps_to_json(_time_stamps: list[tuple], _filename: str):
     # Specify the filename with a .json extension
     if not _filename.endswith(".json"):
         _filename += ".json"
+    
+    # Ensure the directory exists
+    os.makedirs(os.path.dirname(_filename), exist_ok=True)
 
     # Write the list to a JSON file
-    with open(_filename, "w") as json_file:
+    with open(_filename, "w", encoding='utf-8') as json_file:
         json.dump(timestamps_list, json_file, indent=4)
 
 
@@ -187,15 +124,25 @@ def load_words(file_path: str) -> list[dict]:
     :param file_path: str
     :return: list[dict]
     """
-    with open(file_path, 'r') as file:
+    with open(file_path, 'r', encoding='utf-8') as file:
         data = json.load(file)
-    return data.get("words", {})
+
+    # Asegúrate de que sea una lista de diccionarios
+    if not isinstance(data, list):
+        raise ValueError("Expected a list in the JSON file.")
+    if not all(isinstance(item, dict) for item in data):
+        raise ValueError("Expected all items in the list to be dictionaries.")
+
+    return data
 
 
 def create_paragraphs_for_timestamps(_transcript_words: list[dict], _time_stamps: list[tuple]):
     """
-    Create a list of paragraphs (lines) using a list of words and pairing it to corresponding time stamps.
-    :param _transcript_words: List o words
+    Create a list of paragraphs (lines) using a list of words and
+    pairing it to corresponding time stamps.
+
+    :param list[dict] _transcript_words: List of words, where each word
+    is a dictionary.
     :param _time_stamps: List of the time stamps to match the words.
     :return: list of paragraphs (lines)
     """
@@ -221,10 +168,11 @@ def create_paragraphs_for_timestamps(_transcript_words: list[dict], _time_stamps
 
 def load_timestamps(_time_stamps_path) -> list[tuple[str, str]]:
     # Read the time-stamps from the JSON file
-    with open(_time_stamps_path, 'r') as json_file:
+    with open(_time_stamps_path, 'r', encoding="utf-8") as json_file:
         time_stamps = json.load(json_file)
 
     return time_stamps
+
 
 def create_composed_subtitles(_time_stamps: list[tuple[str, str]], _transcription_path: str, _subtitles_path: str):
     """
@@ -286,7 +234,7 @@ def replace_subs(original_path, parsed_path, output_path):
         f.writelines(original_lines)
 
 
-def parse_aegis_subs(_ass_file: str, _txt_file: str = None) -> str:
+def parse_aegis_subs(_ass_file: str, _txt_file: str | None = None) -> str:
     """
     Extract the subtitles from an Aegis Sub file and return them as a formatted string.
     Files with a non Aegis Sub format will still be parsed through, but avoid for potential issues.
@@ -327,6 +275,7 @@ def parse_aegis_subs(_ass_file: str, _txt_file: str = None) -> str:
                     recovered_text.append(text.strip())
                     
     recovered_text_str = "\n".join(recovered_text)
+    print(recovered_text_str)
 
     if _txt_file is not None:
         # Save the extracted text to the .txt file if _txt_file is provided
@@ -358,7 +307,9 @@ def clean_text(_unparsed_text: str) -> str:
 
 def extract_sections_from_subs(spanish_subs) -> tuple[list[str], list[str]]:
     """
-    Extract the different sections from subtitles and return them as list of strings, each string is an AegisSub line.
+    Extract the different sections from subtitles and return them as 
+    list of strings, each string is an AegisSub line.
+
     :param spanish_subs: Path for the subtitles in spanish.
     :return: sections, sections_clean
     """
@@ -391,14 +342,14 @@ def save_subtitulos_json(subtitulos: list[Subtitulo], subtitulos_json: str):
     subtitulos_dict = [subtitulo.to_dict() for subtitulo in subtitulos]
     
     # Save to JSON
-    with open(subtitulos_json, 'w') as f:
+    with open(subtitulos_json, 'w', encoding='utf-8') as f:
         json.dump(subtitulos_dict, f, indent=4)
 
 
-def load_subtitulos_json(subtitulos_json) -> list[Subtitulo]:
+def load_subtitulos_json(subtitulos_json: str) -> list[Subtitulo]:
     # Load from JSON
-    with open(subtitulos_json, 'r') as f:
-        subtitulos_dict = json.load(f)
+    with open(subtitulos_json, 'r', encoding='utf-8') as f:
+        subtitulos_dict: list[dict[str, Any]] = json.load(f)
 
     # Convert the list of dictionaries to a list of objects
     subtitulos = [Subtitulo.from_dict(subtitulo) for subtitulo in subtitulos_dict]

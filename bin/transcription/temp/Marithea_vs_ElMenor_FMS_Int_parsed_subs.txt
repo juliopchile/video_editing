@@ -1,0 +1,86 @@
+Dialogue: 0,0:00:21.74,0:00:26.14,Default,,0,0,0,,ver qué salen las temáticas Es el día soñado donde soy campeona
+Dialogue: 0,0:00:26.14,0:00:32.61,Default,,0,0,0,,Así que disculpa menor, perdona eres el heredero al trono Pero si sigo viva de mí es la corona
+Dialogue: 0,0:00:32.61,0:00:37.84,Default,,0,0,0,,Así que no me hables men que te vas porque al final tú no
+Dialogue: 0,0:00:37.84,0:00:44.48,Default,,0,0,0,,No sé cuál es la razón por la que te apoya la escena Si tú eres como Jesús A lo mucho has tenido una noche buena
+Dialogue: 0,0:00:45.03,0:00:50.51,Default,,0,0,0,,En serio vengo a. Dejar tu cuerpo inerte Tan nerviosa y no tú mismo puedes autoconvencerte
+Dialogue: 0,0:00:50.51,0:00:56.37,Default,,0,0,0,,mala nunca muere y no puede darme muerte porque soy Héctor Lavo Y este es el día de mi suerte
+Dialogue: 0,0:00:57.22,0:01:07.63,Default,,0,0,0,,Así de fácil Rima nunca sencilla Lo estoy haciendo desde la alcantarilla mira cómo brilla No es tu día soñado conmigo es tu. Noche de pesadilla
+Dialogue: 0,0:01:08.22,0:01:13.20,Default,,0,0,0,,De pesadilla Estoy relajada, es más te voy a ganar aquí muy calmada
+Dialogue: 0,0:01:13.20,0:01:19.06,Default,,0,0,0,,Yo no voy a dormir no porque esté estresada ya no puedo dormir porque tengo una vida soñada
+Dialogue: 0,0:01:20.15,0:01:23.79,Default,,0,0,0,,Qué me hablas tú de día Porque la verdad no eres pa
+Dialogue: 0,0:01:23.79,0:01:30.36,Default,,0,0,0,,Es el día de tu suerte cuando estás improvisando Pero ese día no ha llegado Así que mejor sigue soñando
+Dialogue: 0,0:01:30.95,0:01:36.23,Default,,0,0,0,,soñando y. Si sueño entonces gano porque en verdad eso sobrevivido de lo malo
+Dialogue: 0,0:01:36.49,0:01:41.86,Default,,0,0,0,,Te lo juro que este un día soñado y hago que se calle porque los códigos nos lo han nombrado
+Dialogue: 0,0:01:41.86,0:01:47.54,Default,,0,0,0,,Te lo juro Mejor sueña en ese día que yo tengo los códigos de un rimen con
+Dialogue: 0,0:01:47.91,0:01:53.56,Default,,0,0,0,,vas a ver esta si no es callejera Ya le gané al ballestero y ahí le gano a Ballestera.
+Dialogue: 0,0:01:53.56,0:01:58.24,Default,,0,0,0,,Le gano a ballesteras Que vas a hablar tú de calle y que vas a hablar de
+Dialogue: 0,0:01:58.52,0:02:05.19,Default,,0,0,0,,¿Yo conozco los códigos y te lo puedo hacer sin el drama Porque tú eres chileno pero yo soy colombiana
+Dialogue: 0,0:02:05.71,0:02:10.47,Default,,0,0,0,,hablo de esos códigos no entiendes? ¿Así que este rapper para mí no es diferente
+Dialogue: 0,0:02:10.47,0:02:16.26,Default,,0,0,0,,un código de barra enfrente de la gente Ya está pasando el producto así que siga el siguiente.
+Dialogue: 0,0:02:16.26,0:02:27.73,Default,,0,0,0,,Sí sabes lo que es un código hacer esta rima Volver a pararme de lo malo en cualquier tarima Porque ser callejero es representar con rima Para ser callejero no solo se vende cocaína
+Dialogue: 0,0:02:28.31,0:02:34.00,Default,,0,0,0,,Así de simple No solo eso en la calle y tú no estás ahí nunca Tú solo estás en los
+Dialogue: 0,0:02:34.23,0:02:39.21,Default,,0,0,0,,Adivina qué Yo fui a tu país Bajé a todas las callejeras pero ninguno
+Dialogue: 0,0:03:11.69,0:03:14.95,Default,,0,0,0,,esa será que no escucha Porque ya no lucha por mantener su carrera
+Dialogue: 0,0:03:15.39,0:03:19.07,Default,,0,0,0,,lo juro mis primas son muchas son cinco puchas así se hacen certera
+Dialogue: 0,0:03:19.37,0:03:25.47,Default,,0,0,0,,Balleste en Loquillo y ahora pierde esta nena Bandeja paisa Van dejando a tu paisa afuera
+Dialogue: 0,0:03:26.81,0:03:33.20,Default,,0,0,0,,Así de simple Ni siquiera tú la podrías entender Te falta aprender te falta subir, bajar Te falta ganar y perder
+Dialogue: 0,0:03:33.20,0:03:40.71,Default,,0,0,0,,Así es como lo hago Yo soy Johnny Depp y tú eres Amber Heard Piensa que van a votar por ti pero solo por ser mujer
+Dialogue: 0,0:03:41.11,0:03:48.11,Default,,0,0,0,,no lo creo, le gano, yo lo hago de pana Estoy cumpliendo el sueño americano Bajo mi persiana americana
+Dialogue: 0,0:03:48.38,0:03:55.59,Default,,0,0,0,,Así es como lo hago con mi bandera a oscua mi hermana Porque mi bandera chilena es tu corbata colombiana
+Dialogue: 0,0:03:56.76,0:04:02.30,Default,,0,0,0,,mis rimas han era al instante por instinto soy distinto es un quiltro yo estoy distante
+Dialogue: 0,0:04:02.54,0:04:09.80,Default,,0,0,0,,te lo juro tú eres afro pero yo me llamo Efra Hoy día lo que traje son refranes pa fracturarte
+Dialogue: 0,0:04:10.59,0:04:17.53,Default,,0,0,0,,tantas rimas que ninguna es básica Te juro que te matan tu palabra que son válidas Yo tengo rima mágica Yo le pego como el
+Dialogue: 0,0:04:17.72,0:04:24.73,Default,,0,0,0,,Que lata que tu rima sea barata Es de Colombia y parece de África Soy África,
+Dialogue: 0,0:04:26.47,0:04:31.83,Default,,0,0,0,,por favor mi rima es bella Soy Popeye con la epopeya Soy Nilantro marco la
+Dialogue: 0,0:04:32.10,0:04:39.08,Default,,0,0,0,,lo juro que nuestras dos banderas son bellas Las dos son tricolores Pero la mía tiene una. Estrella
+Dialogue: 0,0:04:39.35,0:04:46.27,Default,,0,0,0,,Tiene una estrella y soy yo hoy en día Vengo brillando y te enseño De la poesía
+Dialogue: 0,0:04:46.27,0:04:53.67,Default,,0,0,0,,a Ballesta y a Loquillo hoy en día Y yo soy una buena lectora Voy a completar la nueva trilogía
+Dialogue: 0,0:04:53.88,0:05:00.80,Default,,0,0,0,,Esa cosa de esa rima ya te pareció Así que no te hagas el bueno por favor menor
+Dialogue: 0,0:05:00.96,0:05:08.16,Default,,0,0,0,,Yo parezco negra, esa es mi condición Y adivine que? Un negro fue el que esto se
+Dialogue: 0,0:05:10.12,0:05:15.56,Default,,0,0,0,,qué hablas tú de Amber Head Si al final esa rima no te
+Dialogue: 0,0:05:15.79,0:05:23.15,Default,,0,0,0,,vas a perder el juicio Y será por decisión Porque eres Johnny Dee Una muy pésima actuación
+Dialogue: 0,0:05:23.15,0:05:24.31,Default,,0,0,0,,Ya te vas,
+Dialogue: 0,0:05:25.50,0:05:37.99,Default,,0,0,0,,vas Hoy en día yo soy Amber Head Como este tipo me decía Estoy mintiendo Y la gente cre cree que es real y por eso te dejo afuera de lo poco que tenía
+Dialogue: 0,0:05:39.51,0:05:45.33,Default,,0,0,0,,rimas reales y respuestas la de hacer este tipo aquí le cuesta.
+Dialogue: 0,0:05:45.66,0:05:52.71,Default,,0,0,0,,hablas de bandeja, pero Marita de qué habla? Yo no sé qué comen en Chile, pero te comes tus palabras.
+Dialogue: 0,0:05:54.24,0:06:00.28,Default,,0,0,0,,me falta perder, me falta aprender. Hablaste de cocaína y todas esas cosas. ¿Te parece
+Dialogue: 0,0:06:01.52,0:06:07.59,Default,,0,0,0,,Está bien. La coca no es ser callejero irreal. Y después anda hablando de paquetes y líneas diciendo yo soy
+Dialogue: 0,0:06:37.89,0:06:43.65,Default,,0,0,0,,confiada y yo te hablo del sonido. No me mires así porque yo no me he intimido.
+Dialogue: 0,0:06:44.03,0:06:48.87,Default,,0,0,0,,tu mente hay mucho ruido. ¿Cómo me vas a intimidar? Desde el nombre ya estás disminuido.
+Dialogue: 0,0:06:49.39,0:06:59.63,Default,,0,0,0,,Es verdad. Cómo te gusta esa rima te voy a decir verdades. En las tarimas me puse Marithea de una diosa. ¿Te imaginas? Hasta para beberme el nombre tengo más autoestima
+Dialogue: 0,0:07:00.65,0:07:10.35,Default,,0,0,0,,de esas cosas de aquella. Por eso soy una diosa que deja huella. Tú hablaste de tu bandera. No habló de ella. Chile es un hotel de mala muerte porque tiene poca estrella.
+Dialogue: 0,0:07:11.64,0:07:15.35,Default,,0,0,0,,adentro del free. Eso es lo mejor que tenías pa decir.
+Dialogue: 0,0:07:15.35,0:07:20.56,Default,,0,0,0,,Dejo de hacer métricas cuando empezó a sufrir. Tu freestyle se merece una estrella
+Dialogue: 0,0:07:21.99,0:07:26.21,Default,,0,0,0,,Por cómo te las preparas. Por esas rimas que la tentaba.
+Dialogue: 0,0:07:26.21,0:07:31.51,Default,,0,0,0,,Además lo quieren de los campeones. Minimizan tus aciertos y maximizan tus errores.
+Dialogue: 0,0:07:32.97,0:07:41.93,Default,,0,0,0,,siento menor, pero conmigo no hay otra situación. Quiere ser el heredero al trono campeón pero no puede ser porque la reina no se murió.
+Dialogue: 0,0:07:42.65,0:07:52.94,Default,,0,0,0,,dices que yo soy como un michelin Me echo limón en la herida Michelaco Lin Aunque me tiene hinchado el lin de juar pero lin chao pues me dicen Chao
+Dialogue: 0,0:07:53.97,0:08:03.72,Default,,0,0,0,,sé si verdadero autor del crimen El rap lo hicieron los negros Yo soy el eminente Chile porque te estoy ganando frente a 8.000
+Dialogue: 0,0:08:04.95,0:08:08.81,Default,,0,0,0,,¿Lo entiende o no? Parece que está muy retrasada.
+Dialogue: 0,0:08:08.81,0:08:14.28,Default,,0,0,0,,Los negros inventaron el rap Eva mordió la manzana y no le echamos la culpa de la maldad.
+Dialogue: 0,0:08:15.60,0:08:25.49,Default,,0,0,0,,como un Ferrari No es autoestima, es un autoestimado que no es muy de Cali Es grado Mercalli Usé la Mari Palmecha y uso la mecha para fumarme a la
+Dialogue: 0,0:08:25.75,0:08:35.40,Default,,0,0,0,,por si me quiere hablar de nombre Porque tú eres mujer pero pareces hombre Y si pareces hombre entonces por los huevos que voy contra el populismo. Aquí vamos de nuevo.
+Dialogue: 0,0:08:36.44,0:08:40.78,Default,,0,0,0,,Se me está acabando la voz, pero ya le dije que soy Héctor
+Dialogue: 0,0:08:41.19,0:08:46.27,Default,,0,0,0,,que la clavó y te lavó el cerebro. García Márquez, vete para el Parque del Refuerzo.
+Dialogue: 0,0:08:53.84,0:08:57.09,Default,,0,0,0,,Lo siento, Marithea. Cuando yo empecé tú no tenías trayectoria.
+Dialogue: 0,0:08:57.88,0:09:02.17,Default,,0,0,0,,eso es lo que te duele, que te la das de seria. Pero como Loquillo, igual podría ser
+Dialogue: 0,0:09:02.59,0:09:09.80,Default,,0,0,0,,parezco Chuti, como él. Soy el mejor de la historia porque ya maté a Balleste. Y repito la exterminación de Colombia.
+Dialogue: 0,0:09:11.37,0:09:15.43,Default,,0,0,0,,Lo mismo que dijo a los minutos. Pensar algo nuevo te cuesta.
+Dialogue: 0,0:09:16.39,0:09:26.41,Default,,0,0,0,,que tú no estabas primero que yo. Yo ya estaba escondida como una piedra. Luego salí a los videos y me vieron como maestra. Tú les llamas estructura, yo les llamo disimular las respuestas.
+Dialogue: 0,0:09:29.48,0:09:36.77,Default,,0,0,0,,puedes disimularla, pero no sabes hacerla. No me hables de piedra, que soy la roca y tú perdiste por estar recogiendo piedras. Una perla,
+Dialogue: 0,0:09:37.03,0:09:45.05,Default,,0,0,0,,sé si lo entiendes. Yo soy como un persa, vengo a romper la quijada. Mi rima no se piensa ni nada, se cree Escobar. Hoy te voy a mandar extraditada.
+Dialogue: 0,0:09:46.42,0:09:51.09,Default,,0,0,0,,¿Yo dije algo de Escobar? No. Ah, me está dando la razón.
+Dialogue: 0,0:09:51.40,0:09:54.89,Default,,0,0,0,,él dijo que se cree Escobar. ¿Vieron que él mismo la sacó
+Dialogue: 0,0:09:55.27,0:10:00.97,Default,,0,0,0,,final? Ahora me pones más puntos y te voy a ganar. Yo estoy sacando cálculos como la piedra en tu
+Dialogue: 0,0:10:11.96,0:10:22.25,Default,,0,0,0,,quieres hacer cálculos así como renales? Yo rompiendo triángulos y zonas terrenales. Te lo juro, estoy haciendo ángulos, puntos vitales. Hace cálculos. Bienvenido a Juegos mentales.
+Dialogue: 0,0:10:22.25,0:10:32.72,Default,,0,0,0,,eres un círculo vicioso. Ya lo has entendido. Porque te gustan las drogas pa llevarte pa' l sonido. No me gusta dar vueltas. ¿Pero has entendido que yo voy a ser la musa de tu cuadro depresivo?
+Dialogue: 0,0:10:33.34,0:10:43.52,Default,,0,0,0,,me importa, yo no tengo depresión. A la Mari siempre le ha ganado mi pulmón. Así que no me hables de drogadicción. Que te fumo en smoking, pero después me video Reacciona,
+Dialogue: 0,0:10:45.42,0:10:54.07,Default,,0,0,0,,Señores, esas rimas le parecen a ustedes los mejores. Serás el lobo del cuento, Señoras y señores. Para fumarte esta mar y necesitas de cuatro pulmones.
+Dialogue: 0,0:10:55.20,0:11:05.05,Default,,0,0,0,,siento, mi rima está llena. Cuatro pulmones, yo pulmones de ballena. Es verdad. Y este de mi rima siempre aprende. Tú hablas con la boca llena y por eso no se
+Dialogue: 0,0:11:05.47,0:11:15.22,Default,,0,0,0,,eso no se entiende que estás perdiendo. Lo entienden perfectamente. Y es verdad lo que dijo ese menor. Yo hablo con la boca llena. Con la boca llena de razón.
+Dialogue: 0,0:11:15.85,0:11:26.35,Default,,0,0,0,,Esa es la típica. Tuvo que repetir una rima. Qué habilidad mínima. Te lo juro. No sea cínica. Tiene mucha autoestima, pero muy poca autocrítica.
+Dialogue: 0,0:11:27.16,0:11:31.43,Default,,0,0,0,,muy poca autocrítica, pero soy auténtica y me paso de cínica.
+Dialogue: 0,0:11:32.87,0:11:36.39,Default,,0,0,0,,Y tienes razón. Tengo mucha autocrítica. Por eso soy la mejor.
+Dialogue: 0,0:11:37.19,0:11:47.28,Default,,0,0,0,,No, tú no eres la mejor. Yo le pongo el sazón como Tego Calderón o como Peperón. El Vicente Calderón si siente energía de mente y corazón.
+Dialogue: 0,0:11:48.25,0:11:52.76,Default,,0,0,0,,dónde te sacan las respuestas? Entenderlo hasta el día de hoy me la cuesta.
+Dialogue: 0,0:11:52.76,0:11:58.10,Default,,0,0,0,,Le estoy ganando al menor para que repose. Y como tengo Calderón, esto es para que se lo goce.

@@ -1,103 +1,113 @@
-import openai
-from functions.api_secrets import API_KEY_OPENAI, OPEN_AI_ASSISTANT
-import time
-import logging
-from datetime import datetime
+import json
+from collections.abc import Iterable
+from openai import OpenAI
+from openai.types.responses.tool_param import ToolParam
+from openai.types.responses.response_input_param import ResponseInputParam
+from openai.types.shared_params.reasoning import Reasoning
+from openai.types.shared_params.responses_model import ResponsesModel
+from openai._types import NotGiven
+from functions.super_secrets import API_KEY_OPENAI
+
+API_KEY = API_KEY_OPENAI
+
+JSON_SCHEMA: ToolParam = {
+    "type": "function",
+    "name": "translate_texts",
+    "description": "Translate an array of strings from in the given language",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "translated": {
+                "type": "array",
+                "items": {"type": "string"},
+                "description": "List of translated strings in the same order.",
+            }
+        },
+        "required": ["translated"],
+        "additionalProperties": False,
+    },
+    "strict": True,
+}
+
+SYSTEM_PROMPT: str = (
+    "Role: You are a profesional translator fluent in all languages. " 
+    "Your task is to translate the given text from its original language into "
+    "the specified target language or laguages.\n\n"
+    "Instructions:\n"
+    "• Output only the translation; do not include any commentary, questions, "
+    "or extra text.\n"
+    "• Output in plain text unless a specific format is given.\n"
+    "• Translate naturally and fluently, ensuring that the meaning, tone, and "
+    "intent from the original text are preserved.\n"
+    "• Use a literal translation when appropriate, but adapt or interpret "
+    "sections to best preserve meaning when a word-for-word translation would "
+    "be unclear.\n"
+    "• When cultural references, idioms, or expressions are present, adapt "
+    "them to fit the target language audience while maintaining their "
+    "original intent.\n"
+    "• Accurately translate technical terms, specialized jargon, or "
+    "industry-specific vocabulary.\n"
+    "• Profanity filter: OFF."
+    
+)
+
+DEVELOPER_PROMPT: str = (
+    "You are a rap battle translator. Your task is to translate Spanish rap "
+    "battle verses into English, preserving the original style, slang, "
+    "wordplay, and cultural nuances. When given any Spanish rap battle text, "
+    "produce an English translation that maintains the punch, attitude, and "
+    "creative flair of the original. If needed, adapt idioms and puns to "
+    "appropriate English equivalents that capture the same impact, but keep "
+    "names untouched and don't add extra lines or phrases."
+)
 
 
-client = openai.OpenAI(api_key=API_KEY_OPENAI)
-MODEL = "gpt-4-1106-preview"
+MODEL: ResponsesModel = "o4-mini-2025-04-16"
+REASONING: Reasoning = {"effort": "low"}
 
 
-def wait_for_run_completion(client, thread_id, run_id, sleep_interval=2.5):
-    """
+def from_string(section: str) -> list[str]:
+    sections = section.split(sep="\n")
+    return sections
 
-    Waits for a run to complete and prints the elapsed time.:param client: The OpenAI client object.
-    :param thread_id: The ID of the thread.
-    :param run_id: The ID of the run.
-    :param sleep_interval: Time in seconds to wait between checks.
-    """
-    while True:
-        try:
-            run = client.beta.threads.runs.retrieve(thread_id=thread_id, run_id=run_id)
-            if run.completed_at:
-                elapsed_time = run.completed_at - run.created_at
-                formatted_elapsed_time = time.strftime("%H:%M:%S", time.gmtime(elapsed_time))
-                print(f"Run completed in {formatted_elapsed_time}")
-                logging.info(f"Run completed in {formatted_elapsed_time}")
-                # Get messages here once Run is completed!
-                messages = client.beta.threads.messages.list(thread_id=thread_id)
-                last_message = messages.data[0]
-                response = last_message.content[0].text.value
-                return response
-        except openai.OpenAIError:  # Replace with the actual exception
-            raise openai.OpenAIError
-        logging.info("Waiting for run to complete...")
-        time.sleep(sleep_interval)
+def to_string(sections: list[str]) -> str:
+    return "\n".join(sections)
 
 
-def create_assistant(name, prompt, model=MODEL):
-    assistant = client.beta.assistants.create(name=name, instructions=prompt, model=model)
-    return assistant.id
+def translate_list(spanish_text: str):
+    # Convert the string into a 
+    parrafos = from_string(spanish_text)
+    
+    # Use the OpenAI API for the tarnslation
+    client = OpenAI(api_key=API_KEY)
+
+    user_message: str = json.dumps({"verses": parrafos}, ensure_ascii=False)
+
+    # 1. Define tus “mensajes”
+    messages: str | ResponseInputParam | NotGiven = [
+        {"role": "system", "content": SYSTEM_PROMPT},
+        {"role": "developer", "content": DEVELOPER_PROMPT},
+        {"role": "user", "content": user_message}
+    ]
+
+    # 2. Define tu “herramienta” / función
+    tools: Iterable[ToolParam] = [JSON_SCHEMA]
 
 
-def create_thread():
-    thread = client.beta.threads.create()
-    return thread.id
-
-
-def append_message(thread_id, message_txt, initial_instruction=None):
-    if initial_instruction is not None:
-        client.beta.threads.messages.create(thread_id=thread_id, role='user', content=initial_instruction)
-    client.beta.threads.messages.create(thread_id=thread_id, role='user', content=message_txt)
-
-
-def create_run(assistant_id, thread_id):
-    run = client.beta.threads.runs.create(
-        thread_id=thread_id,
-        assistant_id=assistant_id
+    # 3. Llama al endpoint “Responses”
+    response = client.responses.create(
+        model=MODEL,
+        reasoning=REASONING,
+        input=messages,
+        tools=tools,
     )
-    return run.id
+    
+    # Process the response
+    translated_list = json.loads(response.output[1].arguments)["translated"]
+    #response_dict = response.output[1].model_dump()
+    #translated_dict = json.loads(response_dict["arguments"])
+    #translated_list = translated_dict["translated"]
 
-
-def translate_text(message: str, initial_instruction=None, assistant_id=OPEN_AI_ASSISTANT):
-    thread_id = create_thread()
-    append_message(thread_id, message, initial_instruction)
-    run_id = create_run(assistant_id, thread_id)
-    response = wait_for_run_completion(client=client, thread_id=thread_id, run_id=run_id)
-    return response
-
-
-def translate_gpt(_api_key: str, _message: str, _prompt: str, _examples = None, _model: str = "gpt-4-1106-preview"):
-    """DEPRECATED Use translate_text instead"""
-    openai.api_key = _api_key
-
-    if _examples is not None:
-        _messages = [
-            {"role": "system", "content": _prompt},
-            {"role": "system", "name": "example_user", "content": _examples[0]},
-            {"role": "system", "name": "example_assistant", "content": _examples[1]},
-            {"role": "user", "content": _message},
-        ]
-    else:
-        _messages = [
-            {"role": "system", "content": _prompt},
-            {"role": "user", "content": _message},
-        ]
-
-    # Make an API request to translate the text using chat completions endpoint
-    try:
-        response = openai.ChatCompletion.create(
-            model=_model,  # Choose the chat model for translation
-            messages=_messages,
-            max_tokens=1700, # Set the maximum number of tokens in the response
-            temperature=0.33,
-        )
-
-        # Extract the translated text from the response
-        translated_text = response.choices[0].message["content"]
-
-        return translated_text
-
-    except openai.OpenAIError:  # Replace with the actual exception
-        raise openai.OpenAIError
+    # Convert the list into a string and return it
+    translated_text = to_string(translated_list)
+    return translated_text

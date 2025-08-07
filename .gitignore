@@ -7,13 +7,12 @@
 *.tiff
 *.svg
 *.mp4
-*.mov
-*.mkv
-*.webm
 *.mp3
 *.wav
 *.avi
-*.flac
+*.mov
+*.mkv
+*.webm
 
 # Ignore the file super_secrets.py in any directory
 **/super_secrets.py

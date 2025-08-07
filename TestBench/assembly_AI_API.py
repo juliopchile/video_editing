@@ -4,13 +4,12 @@ import logging
 from enum import Enum
 from typing import Any
 import assemblyai as aai
-from assemblyai import TranscriptionConfig, Settings, Transcript
-from functions.super_secrets import API_KEY_ASSEMBLYAI
+from assemblyai import TranscriptionConfig, Settings, TranscriptStatus
 
 logger = logging.getLogger(__name__)
 
 # ── CONFIGURATION ──────────────────────────────────────────────────────────
-API_KEY = API_KEY_ASSEMBLYAI
+API_KEY = ""
 BASE_URL = "https://api.assemblyai.com"
 EU_URL = "https://api.eu.assemblyai.com"
 CUSTOM_SPELLING = {
@@ -21,7 +20,7 @@ CUSTOM_SPELLING = {
 }
 
 # By default use this configurations
-TRANS_CONFIG = TranscriptionConfig(
+TRANSCRIPTION_CONFIG = TranscriptionConfig(
     language_code="es",
     speaker_labels=True,
     punctuate=True,
@@ -66,57 +65,15 @@ class ExportFormat(str, Enum):
 
 class AssemblyAI:
     """
-    A class to interact with the AssemblyAI API for audio transcription
-    and exporting results in various formats.
-    
-    This class provides an interface to initialize and configure the
-    AssemblyAI client, transcribe audio files, retrieve existing
-    transcriptions, and export transcription outputs in multiple formats
-    including SRT, VTT, plain text, and JSON (segmented by paragraphs,
-    sentences, or words). It supports setting up the API key, client
-    settings, and transcription configurations via its constructor or
-    dedicated setter methods.
-
-    Attributes:
-        api_key (str): The API key used to authenticate with the
-            AssemblyAI API.
-        settings (Settings): Configuration settings for the Client
-            instances used during transcription.
-        config (TranscriptionConfig): Configuration to be used during
-            the transcription process.
-        transcript (Transcript | None): The actual transcription being
-            processed or already retrieved.
-
-    Example:
-        >>> # Initialize an instance with your API key and default settings.
-        >>> aai_instance = AssemblyAI(api_key="your_api_key_here")
-        >>>
-        >>> # Transcribe an audio file.
-        >>> aai_instance.transcribe("path/to/audio.mp3")
-        >>>
-        >>> # Save the transcription as plain text.
-        >>> aai_instance.save_txt("transcript.txt")
+    A class to interact with AssemblyAI API for audio transcription.
     """
-
     def __init__(self,
                  api_key: str | None = API_KEY,
                  settings: dict | Settings | None = SETTINGS,
-                 config: dict | TranscriptionConfig | None = TRANS_CONFIG,
+                 config: dict | TranscriptionConfig | None = None,
                  transcript_id: str | None = None
                  ) -> None:
-        """
-        Constructor for the AssemblyAI custom class.
 
-        :param str | None api_key: API key to be used to set up clients
-        and transcription retrievals, defaults to ``API_KEY``.
-        :param dict | Settings | None settings: Settings to be used for
-        client configuration, defaults to ``SETTINGS``.
-        :param dict | TranscriptionConfig | None config: Configuration
-        to be used for transcriptions, defaults to ``TRANS_CONFIG``.
-        :param str | None transcript_id: Optional parameter, used to
-        retrieve an existing transcription, defaults to None. It must
-        correspond with a valid ``api_key``.
-        """
         self.api_key: str = api_key if isinstance(api_key, str) else API_KEY
         self.settings: Settings = (
             Settings(**settings) if isinstance(settings, dict)
@@ -126,9 +83,10 @@ class AssemblyAI:
         self.config: TranscriptionConfig = (
             TranscriptionConfig(**config) if isinstance(config, dict)
             else config if isinstance(config, TranscriptionConfig)
-            else TRANS_CONFIG
+            else TRANSCRIPTION_CONFIG
         )
-        self.transcript: Transcript | None = None
+        self.transcript: aai.Transcript | None = None
+        
         if transcript_id is not None:
             self.retrieve_transcription(transcript_id)
 
@@ -201,7 +159,7 @@ class AssemblyAI:
                 data=audio_file, config=self.config
             )
             # Check transcription status
-            if transcript.status == aai.TranscriptStatus.error:
+            if transcript.status == TranscriptStatus.error:
                 error = transcript.error
                 raise TranscriptionError(f"Transcription failed: {error}")
             else:
@@ -213,8 +171,8 @@ class AssemblyAI:
     def retrieve_transcription(self, transcript_id: str) -> None:
         """
         Retrieve a transcription by its ID. It initialize a client and
-        transcript object that then gets updated. This doesn't use the
-        ``get_by_id()`` method.
+        transcript object that then gets updated. This method doesn't
+        use the ``get_by_id()``.
 
         :param str transcript_id: Transcription ID to retrieve.
         :raises ValueError: If missing configuration is not set.
@@ -234,7 +192,7 @@ class AssemblyAI:
             )
             transcript.wait_for_completion() # Updates the transcript
             # Check transcription status
-            if transcript.status == aai.TranscriptStatus.error:
+            if transcript.status == TranscriptStatus.error:
                 error = transcript.error
                 raise TranscriptionError(f"Transcription failed: {error}")
             else:
@@ -354,11 +312,14 @@ class AssemblyAI:
         :raises RuntimeError: If something else goes wrong.
         """
         transcript = self._ensure_transcript()
-        words = transcript.words or []
+        words = transcript.words or [] # Lista de objetos WORD
         data = [w.dict() if hasattr(w, "dict") else w.__dict__ for w in words]
         if filename is None:
             filename =  f"words_transcript_{transcript.id}.json"
         self._save_json(data, filename, "Words")
+
+        
+        
 
 
 if __name__ == '__main__':

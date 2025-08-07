@@ -4,33 +4,39 @@ from tqdm import tqdm
 
 import functions.ffmpeg_functions as ffmpeg
 import functions.utility_functions as util
-from functions.api_secrets import API_KEY_ASSEMBLYAI, API_KEY_OPENAI
 from functions.assembly_AI import AssemblyAI
 
 
-# Paso 0
+# ? PASO 0: CONVERTIR VIDEO A AUDIO
 def video2audio(video="bin/video", audio="bin/audio", extension="wav"):
     """
-    Convierte todos los archivos dentro del directorio video a audios en el directorio audio.
-    :return:
+    Convierte todos los videos en la carpeta **video** a audios en la
+    carpeta **audio**. Se salta a los archivos que ya existen en la
+    carpeta **audio**.
+
+    :param str video: directorio de los videos a procesar.
+    :param str audio: directorio donde guardar los audios procesados.
+    :param str extension: extensión del audio a guardar.
     """
     video_path = os.path.normpath(video)
     audio_path = os.path.normpath(audio)
     ffmpeg.process_videos(video_path, audio_path, extension)
 
 
-# Paso 1
-def manage_transcribe(file, audio_file, data_path, existing_data_transcriptions):
+# ? PASO 1: TRANSCRIBIR AUDIO
+def manage_transcribe(file, audio_file, data_path, extant_transcripts):
     """
-    Gestiona el proceso de transcripción de un audio. Usado por manage_transcriptions()
+    Gestiona el proceso de transcripción de un audio.
+    Usado por manage_transcriptions()
     """
     audio_name, _ = os.path.splitext(file)  # get only the audio name
-    data_file = os.path.join(data_path, audio_name)  # use that name for the full path of data_file
+    data_file = os.path.join(data_path, audio_name)  # use that name
+    data_file = util.limpiar_nombre_archivo(data_file)
 
-    # Check if the corresponding audio file have already been transcribed
-    if os.path.basename(data_file + '.json') not in existing_data_transcriptions:
+    # Check if the audio file have already been transcribed
+    if os.path.basename(data_file + '.json') not in extant_transcripts:
         print(f"Transcribing audio: {file}")
-        transcribe_and_save_data(audio_file, data_file)
+        transcribe_and_save_data(audio_file, data_file + '.json')
     else:
         print(f"Skipped: {file} (Audio already transcribed)")
         # TODO preguntar si quiere realizar la transcripción nuevamente
@@ -38,7 +44,8 @@ def manage_transcribe(file, audio_file, data_path, existing_data_transcriptions)
 
 def manage_transcriptions(audio_path, data_path):
     """
-    Gestiona el proceso de transcripción de los audios en **audio_path** y son guardados en el directorio **data_path**.
+    Gestiona el proceso de transcripción de los audios en **audio_path**
+    y son guardados en el directorio **data_path**.
     :param audio_path:
     :param data_path:
     :return:
@@ -51,19 +58,19 @@ def manage_transcriptions(audio_path, data_path):
     os.makedirs(data_path, exist_ok=True)
 
     # Get a list of existing data files in the data_path
-    existing_data_transcriptions = set(os.listdir(data_path))
+    extant_transcripts = set(os.listdir(data_path))
 
     # Check whether the audio_path corresponds to a directory or a single file
     if os.path.isfile(audio_path):
         file = os.path.basename(audio_path)  # get the audio name + extension
         audio_file = audio_path
-        manage_transcribe(file, audio_file, data_path, existing_data_transcriptions)
+        manage_transcribe(file, audio_file, data_path, extant_transcripts)
 
     elif os.path.isdir(audio_path):
         # Iterate through files in the audio_path directory
         for file in os.listdir(audio_path):
             audio_file = os.path.join(audio_path, file)
-            manage_transcribe(file, audio_file, data_path, existing_data_transcriptions)
+            manage_transcribe(file, audio_file, data_path, extant_transcripts)
 
     else:
         print("No audio file given.")
@@ -76,14 +83,10 @@ def transcribe_and_save_data(audio_file, transcription_data):
     :param transcription_data:
     :return:
     """
-    transcript = AssemblyAI(api_key=API_KEY_ASSEMBLYAI)
-    configuration = {'language_code': 'es',
-                     'punctuate': True,
-                     'format_text': False,
-                     'speaker_labels': False}
+    assembly_ai = AssemblyAI()
+    assembly_ai.transcribe(audio_file=audio_file)
+    assembly_ai.save_words(filename=transcription_data)
 
-    transcript.config(audio_file=audio_file, configuration=configuration)
-    transcript.make_and_save_transcription(transcription_data)
 
 
 def create_transcription_using_timestamps(original_subs, time_stamps_file, transcription_data, transcription_text):
@@ -101,7 +104,7 @@ def create_transcription_using_timestamps(original_subs, time_stamps_file, trans
     """
     # Extract the time stamps from aegis sub and save them for later
     time_stamps_str = util.extract_timestamps_from_file(original_subs)
-    util.save_timestamps_to_json(time_stamps_str, time_stamps_file)
+    #util.save_timestamps_to_json(time_stamps_str, time_stamps_file)
 
     # Convert time_stamps to milliseconds.
     time_stamps_int = util.time_stamps_to_milliseconds(time_stamps_str)
@@ -257,3 +260,4 @@ def create_final_aegis_subs(time_stamps_file, transcription_text, parsed_text, o
     time_stamps = util.load_timestamps(time_stamps_file)
     util.create_composed_subtitles(time_stamps, transcription_text, parsed_text)
     util.replace_subs(original_subs, parsed_text, definitive_subs)
+
