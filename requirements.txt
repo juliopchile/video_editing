@@ -1,0 +1,6 @@
+# Dependencias principales
+assemblyai
+openai
+numpy
+
+# Requiere tener ffmpeg instalado para algunas funciones

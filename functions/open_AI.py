@@ -43,12 +43,10 @@ SYSTEM_PROMPT: str = (
     "sections to best preserve meaning when a word-for-word translation would "
     "be unclear.\n"
     "• When cultural references, idioms, or expressions are present, adapt "
-    "them to fit the target language audience while maintaining their "
-    "original intent.\n"
+    "them to fit the target language while maintaining the original intent.\n"
     "• Accurately translate technical terms, specialized jargon, or "
     "industry-specific vocabulary.\n"
     "• Profanity filter: OFF."
-    
 )
 
 DEVELOPER_PROMPT: str = (
@@ -56,8 +54,8 @@ DEVELOPER_PROMPT: str = (
     "battle verses into English, preserving the original style, slang, "
     "wordplay, and cultural nuances. When given any Spanish rap battle text, "
     "produce an English translation that maintains the punch, attitude, and "
-    "creative flair of the original. If needed, adapt idioms and puns to "
-    "appropriate English equivalents that capture the same impact, but keep "
+    "creative flair of the original. If needed, adapt idioms to appropriate "
+    "English equivalents that capture the same impact, but keep "
     "names untouched and don't add extra lines or phrases."
 )
 

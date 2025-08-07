@@ -1,9 +1,11 @@
-import os.path
 from wrapper import *
 
 VIDEO_NAME = "MINUTAZO de BNET - MÉTRICAS ANALIZADAS - BNET VS TIRPA FMS 2020"
 USE_CLEAN_AUDIO = True
+
+# TODO: implement a way to save the project states in a JSON
 PROJECTS_STATES_PATH = "projects_states.json"
+
 
 def step_0():
     """
