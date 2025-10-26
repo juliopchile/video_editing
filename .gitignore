@@ -17,3 +17,6 @@
 # Ignore any __pycache__ directory
 __pycache__/
 **/__pycache__/
+
+# Ignore environment variable files
+.env
