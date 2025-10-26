@@ -1,2 +1,8 @@
-API_KEY_ASSEMBLYAI = "your_assemblyai_api_key_here"
-API_KEY_OPENAI = "your_openai_api_key_here"
+import os
+from dotenv import load_dotenv
+
+# load .env from project root
+load_dotenv()
+
+API_KEY_OPENAI = os.getenv("OPENAI_API_KEY")
+API_KEY_ASSEMBLYAI = os.getenv("API_KEY_ASSEMBLYAI")

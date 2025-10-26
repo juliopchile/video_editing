@@ -14,10 +14,6 @@
 *.mkv
 *.webm
 
-# Ignore the file super_secrets.py in any directory
-functions/super_secrets.py
-
 # Ignore any __pycache__ directory
 __pycache__/
 **/__pycache__/
-
