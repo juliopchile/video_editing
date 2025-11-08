@@ -207,7 +207,7 @@ def step_4():
 if __name__ == '__main__':
     # --- Preparación --- #
     # Se preparan los archivos de video y audio a utilizar
-    step_0()
+    # step_0()
 
     # --- Transcripción --- #
     # Se usa la API de AssemblyAI para transcribir automáticamente lo dicho en un audio
@@ -215,7 +215,7 @@ if __name__ == '__main__':
 
     # --- Subtitular --- #
     # Se ajusta la transcripción a los tiempos designados para los subtítulos
-    # step_2()
+    step_2()
 
     # --- Crear Subtitles --- #
     # Se crean los subtítulos JSON

@@ -70,6 +70,11 @@ def manage_transcriptions(audio_path, data_path):
         # Iterate through files in the audio_path directory
         for file in os.listdir(audio_path):
             audio_file = os.path.join(audio_path, file)
+            # Skip subdirectories (only process actual files)
+            if not os.path.isfile(audio_file):
+                # Optionally, uncomment the next line to log skipped directories
+                # print(f"Skipped directory: {file}")
+                continue
             manage_transcribe(file, audio_file, data_path, extant_transcripts)
 
     else:
@@ -104,7 +109,8 @@ def create_transcription_using_timestamps(original_subs, time_stamps_file, trans
     """
     # Extract the time stamps from aegis sub and save them for later
     time_stamps_str = util.extract_timestamps_from_file(original_subs)
-    #util.save_timestamps_to_json(time_stamps_str, time_stamps_file)
+    # Persist timestamps for later steps
+    util.save_timestamps_to_json(time_stamps_str, time_stamps_file)
 
     # Convert time_stamps to milliseconds.
     time_stamps_int = util.time_stamps_to_milliseconds(time_stamps_str)
@@ -130,6 +136,11 @@ def create_updated_subs_ass(time_stamps_file, transcription_text, original_subs,
     :param updated_subs:
     :return:
     """
+    # Ensure timestamps JSON exists; if missing, (re)generate from original_subs
+    if not os.path.exists(time_stamps_file):
+        time_stamps_str = util.extract_timestamps_from_file(original_subs)
+        util.save_timestamps_to_json(time_stamps_str, time_stamps_file)
+
     # Load time_stamps into a list.
     time_stamps = util.load_timestamps(time_stamps_file)
 
