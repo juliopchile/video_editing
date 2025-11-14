@@ -114,3 +114,191 @@ CompareFlow_1 = {
     },
     "configurations": ["U1-AI", "O1-E1-A1", "ENCIA", "IE-E2-E3-A2", "E1-E4-U1-O1"]
 }
+
+Licha = {
+    "palette": {
+        "A1": "#f724b1", // {\c&HB124F7&}
+        "A2": "#f56e0a", // {\c&H0A6EF5&}
+        "E1": "#3fe0f9", // {\c&HF9E03F&}
+        "E2": "#1dd686", // {\c&H86D61D&}
+        "I1": "#f8db20", // {\c&H20DBF8&}
+        "A3": "#a15ad6", // {\c&HD65AA1&}
+        "U1": "#B9B9B9", // {\c&HB9B9B9&}
+        "IEO": "#d19579", // {\c&H7995D1&}
+        "AO": "#f62c06", // {\c&H062CF6&}
+        "E3": "#4678b5", // {\c&HB57846&}
+        "IOE": "#ce4765", // {\c&H6547CE&}
+    },
+    "configurations": ["A1-A2-E1-E2-I1-A3", "U1-I1-A1", "IEO", "U1-AO", "E1-E2-E3-A2-IOE"]
+}
+
+// "E3": "#3af58e", // {\c&H8EF53A&}
+// "AEA": "#5e9ebd", // {\c&HBD9E5E&}
+ElMenor = {
+  "palette": {
+    "AE": "#ef3d8e", // {\c&H8E3DEF&}
+    "EO": "#785ef0", // {\c&HF05E78&}
+    "AO": "#c0836a", // {\c&H6A83C0&}
+    "U1": "#00ffff", // {\c&HFFFF00&}
+    "I1": "#e1be88", // {\c&H88BEE1&}
+    "EA": "#6dab45", // {\c&H45AB6D&}
+    "O1": "#fe6100", // {\c&H0061FE&}
+    "IO": "#648fff", // {\c&HFF8F64&}
+    "OE": "#ffb000", // {\c&H00B0FF&}
+    "E1": "#cdea0c", // {\c&H0CEACD&}
+    "E2": "#fd34fa", // {\c&HFA34FD&}
+    "A1": "#00ff00", // {\c&H00FF00&}
+  },
+  "configurations": ["AE", "EO", "AO", "AEA", "U1-EO-I1-EA", "EA", "O1", "U1-EA-O1", "IO", "OE-E1-IO", "E1-E2-E3-A1-O1"],
+  "config_hex": [
+    ["#ef3d8e"],
+    ["#785ef0"],
+    ["#c0836a"],
+    ["#5e9ebd"],
+    ["#00ffff", "#785ef0", "#e1be88", "#6dab45"],
+    ["#6dab45"],
+    ["#fe6100"],
+    ["#00ffff", "#6dab45", "#fe6100"],
+    ["#648fff"],
+    ["#ffb000", "#3af58e", "#648fff"],
+    ["#3af58e", "#cdea0c", "#fd34fa", "#00ff00", "#fe6100"],
+  ],
+  "config_aegis": [
+    ["{\c&H8E3DEF&}"],
+    ["{\c&HF05E78&}"],
+    ["{\c&H6A83C0&}"],
+    ["{\c&HBD9E5E&}"],
+    ["{\c&HFFFF00&}", "{\c&HF05E78&}", "{\c&H88BEE1&}", "{\c&H45AB6D&}"],
+    ["{\c&H45AB6D&}"],
+    ["{\c&H0061FE&}"],
+    ["{\c&HFFFF00&}", "{\c&H45AB6D&}", "{\c&H0061FE&}"],
+    ["{\c&HFF8F64&}"],
+    ["{\c&H00B0FF&}", "{\c&H8EF53A&}", "{\c&HFF8F64&}"],
+    ["{\c&H8EF53A&}", "{\c&H0CEACD&}", "{\c&HFA34FD&}", "{\c&H00FF00&}", "{\c&H0061FE&}"],
+  ]
+}
+
+Zasko1 = {
+  "palette": {
+    "A1": "#ef3d8e", // {\c&H8E3DEF&}
+    "E1": "#648fff", // {\c&HFF8F64&}
+    "E2": "#00ffff", // {\c&HFFFF00&}
+    "I1": "#6dab45", // {\c&H45AB6D&}
+    "EO": "#c0836a", // {\c&H6A83C0&}
+    "U1": "#785ef0", // {\c&HF05E78&}
+    "I2": "#5e9ebd", // {\c&HBD9E5E&}
+    "O1": "#00ff00", // {\c&H00FF00&}
+    "A2": "#ffb000", // {\c&H00B0FF&}
+    "IA": "#fe6100", // {\c&H0061FE&}
+  },
+  "configurations": ["A1-E1-E2-I1", "EO", "U1-I2-O1-A2", "IA"],
+}
+
+Compare_Zasko = {
+  "palette": {
+    "O1": "#ef3d8e", // {\c&H8E3DEF&}
+    "E1": "#648fff", // {\c&HFF8F64&}
+    "A1": "#5e9ebd", // {\c&HBD9E5E&}
+    "I1": "#3af58e", // {\c&H8EF53A&}
+    "A2": "#e1be88", // {\c&H88BEE1&}
+    "I2": "#6dab45", // {\c&H45AB6D&}
+    "O2": "#c0836a", // {\c&H6A83C0&}
+    "E2": "#fd34fa", // {\c&HFA34FD&}
+    "IA": "#ffb000", // {\c&H00B0FF&}
+    "CIA": "#00ff00", // {\c&H00FF00&}
+    "EE": "#fe6100", // {\c&H0061FE&}
+    "U1": "#785ef0", // {\c&HF05E78&}
+    "AA": "#00ffff", // {\c&HFFFF00&}
+    "ILLA": "#cdea0c", // {\c&H0CEACD&}
+  },
+  "configurations": ["O1-E1-A1-I1-A2-I2-O2-E2", "IA", "CIA", "EE", "U1-O1-A1", "AA-ILLA"],
+  "config_hex": [
+    ["#ef3d8e", "#648fff", "#5e9ebd", "#3af58e", "#e1be88", "#6dab45", "#c0836a", "#fd34fa"],
+    ["#ffb000"],
+    ["#00ff00"],
+    ["#fe6100"],
+    ["#785ef0", "#ef3d8e", "#5e9ebd"],
+    ["#00ffff", "#cdea0c"],
+  ],
+  "config_aegis": [
+    ["{\c&H8E3DEF&}", "{\c&HFF8F64&}", "{\c&HBD9E5E&}", "{\c&H8EF53A&}", "{\c&H88BEE1&}", "{\c&H45AB6D&}", "{\c&H6A83C0&}", "{\c&HFA34FD&}"],
+    ["{\c&H00B0FF&}"],
+    ["{\c&H00FF00&}"],
+    ["{\c&H0061FE&}"],
+    ["{\c&HF05E78&}", "{\c&H8E3DEF&}", "{\c&HBD9E5E&}"],
+    ["{\c&HFFFF00&}", "{\c&H0CEACD&}"],
+  ]
+}
+
+
+Zasko2 = {
+  "palette": {
+    "CIA": "#6997d6", // {\c&HD69769&}
+    "EE": "#f62c06", // {\c&H062CF6&}
+    "U1": "#f724b1", // {\c&HB124F7&}
+    "O1": "#1dd686", // {\c&H86D61D&}
+    "A1": "#f8db20", // {\c&H20DBF8&}
+    "AA": "#d19579", // {\c&H7995D1&}
+    "ILLA": "#1f16f8", // {\c&HF8161F&}
+  },
+  "configurations": ["CIA", "EE", "U1-O1-A1", "AA-ILLA"],
+  "config_hex": [
+    ["#f724b1"],
+    ["#f62c06"],
+    ["#6997d6", "#1dd686", "#f8db20"],
+    ["#d19579", "#1f16f8"],
+  ],
+  "config_aegis": [
+    ["{\c&HB124F7&}"],
+    ["{\c&H062CF6&}"],
+    ["{\c&HD69769&}", "{\c&H86D61D&}", "{\c&H20DBF8&}"],
+    ["{\c&H7995D1&}", "{\c&HF8161F&}"],
+  ]
+}
+
+BlackCode = {
+  "palette": {
+    "I1": "#f724b1", // {\c&HB124F7&}
+    "U1": "#6997d6", // {\c&HD69769&}
+    "E1": "#3fe0f9", // {\c&HF9E03F&}
+    "E2": "#f62c06", // {\c&H062CF6&}
+    "I2": "#f8db20", // {\c&H20DBF8&}
+    "AA": "#1dd686", // {\c&H86D61D&}
+    "A1": "#1f16f8", // {\c&HF8161F&}
+    "EA": "#d19579", // {\c&H7995D1&}
+  },
+  "configurations": ["I1-U1-E1", "E2-I2", "AA", "A1-E2-I2", "EA"],
+}
+
+BlackCode = {
+  "palette": {
+    "I1": "#ef3d8e", // {\c&H8E3DEF&}
+    "U1": "#648fff", // {\c&HFF8F64&}
+    "E1": "#00ffff", // {\c&HFFFF00&}
+    "E2": "#fe6100", // {\c&H0061FE&}
+    "I2": "#6dab45", // {\c&H45AB6D&}
+    "AA": "#785ef0", // {\c&HF05E78&}
+    "A1": "#ffb000", // {\c&H00B0FF&}
+    "EA": "#00ff00", // {\c&H00FF00&}
+  },
+  "configurations": ["I1-U1-E1", "E2-I2", "AA", "A1-E2-I2", "EA"],
+}
+
+AdesongVsRodamiento = {
+  "palette": {
+    "A1": "#758c2c", // {\c&H2C8C75&}
+    "E1": "#d19579", // {\c&H7995D1&}
+    "O1": "#d98fcc", // {\c&HCC8FD9&}
+    "AO": "#a15ad6", // {\c&HD65AA1&}
+    "EA": "#3fe0f9", // {\c&HF9E03F&}
+    "EE": "#1dd686", // {\c&H86D61D&}
+    "AA": "#fe6100", // {\c&H0061FE&}
+    "OIE": "#4678b5", // {\c&HB57846&}
+    "O2": "#f62c06", // {\c&H062CF6&}
+    "E2": "#f8db20", // {\c&H20DBF8&}
+    "OO": "#ce4765", // {\c&H6547CE&}
+    "EI": "#00ffff", // {\c&HFFFF00&}
+    "I1": "#3cf509", // {\c&H09F53C&}
+  },
+  "configurations": ["A1-E1-O1", "AO-EA-EE", "AA-OIE", "O2-E2", "OO", "EI-OO", "A1-I1-E1-O1"],
+}

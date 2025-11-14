@@ -36,30 +36,58 @@ def create_kickback(pregunta_in, respuesta_in):
     return pregunta_out, respuesta_out
 
 
+def _strip_braces(code: str) -> str:
+    """Devuelve el código sin llaves externas si vienen presentes: '{...}' -> '...'"""
+    m = re.match(r"^\{(.+)\}$", code)
+    return m.group(1) if m else code
+
+
 def replace_colors_regex(text: str, palette_from: dict, palette_to: dict) -> str:
-    """Reemplaza usando regex sobre los códigos completos presentes en palette_from."""
-    # Mapeo de código completo -> nuevo código
-    mapping = {
-        old_code: palette_to[key]
-        for key, old_code in palette_from.items()
-        if key in palette_to
-    }
+    """Reemplaza SOLO la parte del código de color sin corchetes '{ }'.
+
+    Ejemplo: reemplaza '\\c&H8E3DEF&' por '\\c&H2C8C75&' manteniendo las llaves
+    existentes en el texto sin tocarlas.
+    """
+    # Construir mapeo entre códigos internos (sin llaves)
+    mapping = {}
+    for key, old_full in palette_from.items():
+        if key not in palette_to:
+            continue
+        new_full = palette_to[key]
+        old_inner = _strip_braces(old_full)
+        new_inner = _strip_braces(new_full)
+        mapping[old_inner] = new_inner
+
     if not mapping:
         return text
-    # Crear patrón (OR) escapado
-    pattern = re.compile("|".join(sorted((re.escape(c) for c in mapping.keys()), key=len, reverse=True)))
+
+    # Crear patrón (OR) escapado sobre los códigos internos
+    pattern = re.compile(
+        "|".join(sorted((re.escape(c) for c in mapping.keys()), key=len, reverse=True))
+    )
     return pattern.sub(lambda m: mapping[m.group(0)], text)
 
 
 # Ejemplo de uso
-palette_1 = {'U1': '{\c&HB124F7&}', 'AI': '{\c&HB57846&}', 'O1': '{\c&H7995D1&}', 'E1': '{\c&H20DBF8&}', 'A1': '{\c&H86D61D&}', 'ENCIA': '{\c&HD65AA1&}', 'IE': '{\c&H062CF6&}', 'E2': '{\c&H09F53C&}', 'E3': '{\c&HF9E03F&}', 'A2': '{\c&HF8161F&}', 'E4': '{\c&H6547CE&}'}
+palette_1 = {
+    'A1': r'{\c&H8E3DEF&}', 'E1': r'{\c&HFF8F64&}', 'O1': r'{\c&HFFFF00&}',
+    'AO': r'{\c&H6A83C0&}', 'EE': r'{\c&HBD9E5E&}', 'OI': r'{\c&HF05E78&}',
+    'E2': r'{\c&H88BEE1&}', 'A2': r'{\c&H0061FE&}', 'O2': r'{\c&H45AB6D&}',
+    'OE': r'{\c&H00B0FF&}', 'EI': r'{\c&H00FF00&}', 'I1': r'{\c&H0CEACD&}'
+}
+palette_2 = {
+    'A1': r'{\c&H2C8C75&}', 'E1': r'{\c&H7995D1&}', 'O1': r'{\c&HCC8FD9&}',
+    'AO': r'{\c&HD65AA1&}', 'EA': r'{\c&HF9E03F&}', 'EE': r'{\c&H86D61D&}',
+    'AA': r'{\c&HB124F7&}', 'OIE': r'{\c&HB57846&}', 'O2': r'{\c&H062CF6&}',
+    'E2': r'{\c&H20DBF8&}', 'OO': r'{\c&H6547CE&}', 'EI': r'{\c&HF8161F&}',
+    'I1': r'{\c&H09F53C&}'
+}
 
-palette_2 = {'U1': '{\c&HB124F7&}', 'AI': '{\c&HB57846&}', 'O1': '{\c&HF8161F&}', 'E1': '{\c&H20DBF8&}', 'A1': '{\c&H86D61D&}', 'ENCIA': '{\c&HD65AA1&}', 'IE': '{\c&H062CF6&}', 'E2': '{\c&H09F53C&}', 'E3': '{\c&HF9E03F&}', 'A2': '{\c&H7995D1&}', 'E4': '{\c&H6547CE&}'}
 
-TEXT = r"""Dialogue: 0,0:05:22.75,0:05:33.17,Batallas HD,,0,0,0,,Ve poniendo atención a mi estilo en {\c&HB124F7&}Blu{\c&HFFFFFF&}-{\c&HB57846&}ray{\c&HFFFFFF&}, estas que haces este estilo en {\c&HB124F7&}tu {\c&HB57846&}life{\c&HFFFFFF&}.\NPor mucho que quieras alargarme las estructuras, se nota que está a to' pensado el {\c&HB124F7&}punch{\c&HB57846&}line{\c&HFFFFFF&}.
-Dialogue: 0,0:05:34.57,0:05:43.70,Batallas HD,,0,0,0,,Ya está de{\c&HF9E03F&}vuel{\c&HF8161F&}ta{\c&HFFFFFF&}, el estilo con la e{\c&HD65AA1&}sencia{\c&HFFFFFF&} fresca co{\c&HF9E03F&}nec{\c&HF8161F&}ta{\c&HFFFFFF&}.\NNo puedes hacerlo porque tu e{\c&HD65AA1&}sencia{\c&HFFFFFF&} no tiene perma{\c&HD65AA1&}nencia{\c&HFFFFFF&} y no es la co{\c&HF9E03F&}rrec{\c&HF8161F&}ta{\c&HFFFFFF&}.
-Dialogue: 0,0:05:44.92,0:05:54.36,Batallas HD,,0,0,0,,La mía {\c&H062CF6&}siem{\c&H09F53C&}pre {\c&HF9E03F&}en{\c&HF8161F&}tra{\c&HFFFFFF&}, sabes que el estilo aquí {\c&H062CF6&}sí{\rsinalefa\c&H062CF6&}~{\r\c&H062CF6&}in{\c&H09F53C&}cre{\c&HF9E03F&}men{\c&HF8161F&}ta{\c&HFFFFFF&}\Ny no puedes hacerlo al {\c&H062CF6&}cien{\c&HFFFFFF&} por {\c&H062CF6&}cien{\c&HFFFFFF&}, por eso en la {\c&H062CF6&}sien{\c&H09F53C&} te {\c&HF9E03F&}en{\c&HF8161F&}tra{\c&HFFFFFF&}.
-Dialogue: 0,0:05:55.66,0:06:04.87,Batallas HD,,0,0,0,,Me queda {\c&H20DBF8&}diez {\c&HF9E03F&}se{\c&HB124F7&}gun{\c&H7995D1&}dos{\c&HFFFFFF&}, ya lo {\c&H20DBF8&}ves{\c&HF9E03F&} te {\c&HB124F7&}fun{\c&H7995D1&}do{\c&HFFFFFF&}, como un ovulo {\c&H20DBF8&}te{\c&HF9E03F&} fe{\c&HB124F7&}cun{\c&H7995D1&}do{\c&HFFFFFF&}.\NNo puedes hacer este estilo porque yo soy el más cabrón y el más loco de {\c&H20DBF8&}es{\c&HF9E03F&}te {\c&HB124F7&}mun{\c&H7995D1&}do{\c&HFFFFFF&}."""
+TEXT = r"""Dialogue: 0,0:09:56.13,0:10:06.86,Batallas HD,,0,0,0,,[Section]En la {\c&H8E3DEF&}cla{\c&HFF8F64&}ve {\c&HFFFF00&}son{\c&HFFFFFF&} de rap el {\c&H6A83C0&}canto{\c&HD170EF&} deja {\c&HBD9E5E&}siempre{\c&HFFFFFF&}. Tú sabes que te entrega {\c&H6A83C0&}hardcore alto{\c&HFFFFFF&} y {\c&HD170EF&}deja {\c&HBD9E5E&}muerte{\c&HFFFFFF&}.\NNo sé dónde yo lo busco {\c&HBD9E5E&}siempre{\c&HFFFFFF&}. Se llama {\c&H8E3DEF&\i1\fnVerdana}A{\c&HFF8F64&}de{\c&HFFFF00&}song{\c&HFFFFFF&\i0\fnArial}, yo soy tu {\c&H8E3DEF&\i1\fnVerdana}Ha{\c&HFF8F64&}des'{\c&HFFFF00&} song{\c&HFFFFFF&\i0\fnArial}, o tu {\c&H6A83C0&}canto{\c&HD170EF&} de la {\c&HBD9E5E&}muerte{\c&HFFFFFF&}.
+Dialogue: 0,0:10:07.35,0:10:17.36,Batallas HD,,0,0,0,,Que mira solo tengo todo el nivel. Voy rimando compañero que {\c&H0061FE&}saca ya as{\c&HFFFFFF&}te{\c&HF05E78&}roi{\c&H88BEE1&}des{\c&HFFFFFF&}.\NYa te {\c&H0061FE&}ataca{\c&HFFFFFF&}, {\c&HF05E78&}hoy{\c&H88BEE1&} ves{\c&H00FF00&} con {\c&HFFFF00&}el {\c&H00FF00&}co{\c&HFFFF00&}nec{\c&H00FF00&}tor {\c&HFFFFFF&}ya te afectan mis {\c&H0061FE&}canna{\c&HFFFFFF&}bi{\c&HF05E78&}noi{\c&H88BEE1&}des{\c&HFFFFFF&}.
+Dialogue: 0,0:10:18.99,0:10:27.94,Batallas HD,,0,0,0,,Así ya se saca, ¿querí ganarme? inyecta este{\c&HF05E78&}roi{\c&H88BEE1&}des{\c&HFFFFFF&}.\NTengo todos los tonos, soy el golpe de Meteoro, te topaste en los aste{\c&HF05E78&}roi{\c&H88BEE1&}des{\c&HFFFFFF&}."""
+
 
 if __name__ == "__main__":
     nuevo_texto = replace_colors_regex(TEXT, palette_1, palette_2)
